@@ -10,7 +10,7 @@ var Demo = components.Demo;*/
 
 var antd = require("../vendors/antd/antd");
 
-
+var Header = require("../components/header/header1.jsx");
 
 var Collapse = antd.Collapse;
 var Panel = Collapse.Panel;
@@ -42,6 +42,7 @@ var MainPage = React.createClass({
 
         return(
         	<div>
+        		<Header/>
         		<button type="button">This is a button</button>
         		<antd.Datepicker />
         		<Pagination showQuickJumper={true} onChange={onChange} total={500} />
