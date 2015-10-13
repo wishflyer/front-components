@@ -1,0 +1,16 @@
+{
+    "name": "Mimiron",
+    "description": "Mimiron API",
+    "version": "0.1.0",
+    "options": {
+        "outdir": "./apidocs",
+        "linkNatives": "true",        
+        "attributesEmit": "true",
+        "selleck": "true",
+        "paths": [
+            "./components/base/",
+            "./components/panel/",
+            "./components/echarts/"
+        ]
+    }
+}
