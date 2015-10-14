@@ -26,7 +26,7 @@ var Header1 = React.createClass({
 	render: function() {
 		return (
 			<div id="header1" className="row-flex row-flex-end" style={{"background-color":"#fbfbfb","border-bottom":"1px solid #d9d9d9","padding":"10px 0"}}>
-				<div><img src="../../static/image/logo.png" style={{"position":"absolute","left":"20px"}} /></div>
+				<div><img src="../../static/image/logo.png" style={{"position":"absolute","left":"10%"}} /></div>
 				<div className="menu">
 					<Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{"border-bottom":"0px"}}>
 					   

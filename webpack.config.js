@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = {
     entry: [
       'webpack-dev-server/client?http://localhost:3000',
@@ -9,7 +11,7 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: 'dd.js',
         publicPath: '/static/',
         library: 'components', //https://webpack.github.io/docs/library-and-externals.html
         libraryTarget: 'umd2'
@@ -49,6 +51,16 @@ module.exports = {
             {
                 test: /\.json$/,
                 loader: 'json-loader'
+            }, {
+              test: /\.less$/,
+              loader: ExtractTextPlugin.extract(
+                'css?sourceMap&-minimize!' + 'autoprefixer-loader!' + 'less?sourceMap'
+              )
+            }, {
+              test: /\.css$/,
+              loader: ExtractTextPlugin.extract(
+                'css?sourceMap&-minimize!' + 'autoprefixer-loader'
+              )
             }
         ]
     },
@@ -56,7 +68,8 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new ExtractTextPlugin('dd.css')
     ],
     devtool: 'source-map'
 }

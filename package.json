@@ -13,8 +13,10 @@
     "react": "^0.13.1"
   },
   "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
     "babel-loader": "^5.3.2",
     "bootstrap": "^3.3.5",
+    "css-loader": "^0.14.1",
     "dropzone": "^4.0.1",
     "eonasdan-bootstrap-datetimepicker": "^4.15.35",
     "extract-text-webpack-plugin": "^0.8.2",
@@ -22,6 +24,8 @@
     "jquery": "^1.11.1",
     "jquery-ui": "^1.10.5",
     "json-loader": "^0.5.3",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.1",
     "moment": "^2.10.6",
     "numeral": "^1.5.3",
     "react-bootstrap": "^0.20.0",
