@@ -1,0 +1,41 @@
+
+var React = require("react");
+var antd = require("../../vendors/antd/antd");
+
+var Carousel = antd.Carousel;
+
+var Carousel1 = React.createClass({
+
+	getDefaultProps: function() {
+		return {
+			height:"100%",
+			width:"100%",
+			//数组对象[{img:"../../static/image/bigbar1.jpg",url:"http://www.baidu.com"}]
+			images:[{src:"../../static/image/bigbar4.jpg",url:"http://www.baidu.com"},{src:"../../static/image/bigbar2.jpg",url:"http://www.google.com"}]
+		};
+	},
+
+	render: function() {
+
+		var self =  this;
+		
+		console.log(this.props.images);
+		return (
+			<div className="row">
+				<Carousel dots="false" autoplay="true">
+					{
+						this.props.images.map(function(img){
+							return <div style={{height:self.props.height,width:self.props.width}}><a href={img.url}><img src={img.src} style={{width:"100%"}}/></a></div>
+						})
+					}
+				</Carousel>
+			</div>
+		);
+	}
+
+});
+
+module.exports = Carousel1;
+
+
+
