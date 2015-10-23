@@ -20,12 +20,12 @@
 	border:none; remove the default blue border
 } */
 
-
+/* 
 .pictureWall1 .thumbnailWrapper a img {
 	
 	border:10px soild red;
 } 
-
+ */
 .pictureWall1 .thumbnailWrapper .caption {
 	position:absolute; /* needed for positioning */
 	bottom:0px; /* bottom of the list item (container) */

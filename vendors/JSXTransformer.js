@@ -320,6 +320,10 @@ function runScripts() {
   loadScripts(jsxScripts);
 }
 
+//暴露方法
+window.dd = window.dd || {};
+window.dd.runScripts = runScripts;
+
 // Listen for load event if we're in a browser and then kick off finding and
 // running of scripts.
 if (typeof window !== 'undefined' && window !== null) {

@@ -67,7 +67,7 @@ var MainPage = React.createClass({
                 <Header/>
                 <Carousel images={images}/>
                 <div className="row-flex row-flex-center" style={{"background-color":"white"}}><img src='../../../static/image/ad/bar4.png' /></div>
-        		<PictureWall pictureNumInLine={12} closeInfo={true} images={PictureWallImages} imgIncrease={50}/>
+        		    <PictureWall pictureNumInLine={12} closeInfo={true} images={PictureWallImages} imgIncrease={50}/>
                 <div className="row-flex row-flex-center" style={{"background-color":"#ff5f89"}}><img src='../../../static/image/ad/bar1.jpg' /></div>
                 <div className="row-flex row-flex-center" style={{"background-color":"white","margin":"20px auto"}}><p>Copyright@2015.Company name All rights reserved.</p></div>
 

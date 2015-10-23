@@ -1,0 +1,17 @@
+.fn-right{
+	float:right;
+}
+
+.ant-carousel .slick-slider{
+	padding-bottom: 0px; 
+}
+
+
+#header1 > .menu > .ant-menu-horizontal > .ant-menu-submenu-active, 
+#header1 > .menu > .ant-menu-horizontal > .ant-menu-item-active, 
+#header1 > .menu > .ant-menu-horizontal > .ant-menu-submenu-selected, 
+#header1 > .menu > .ant-menu-horizontal > .ant-menu-item-selected ,
+#header1 > .menu > .ant-menu-horizontal > .ant-menu-submenu, 
+#header1 > .menu > .ant-menu-horizontal > .ant-menu-item {
+    border-bottom: 0px;
+}
