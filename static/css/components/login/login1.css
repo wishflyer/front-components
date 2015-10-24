@@ -1,7 +1,0 @@
-/* set the background of the body */
-body {
-	margin: 0;
-	background: url(../static/patch/background-size-polyfill-gh-pages/images/algeria.jpg) center no-repeat;
-	-ms-behavior: url(../static/patch/background-size-polyfill-gh-pages/backgroundsize.min.htc);
-	behavior: url(../static/patch/background-size-polyfill-gh-pages/backgroundsize.min.htc);
-}
