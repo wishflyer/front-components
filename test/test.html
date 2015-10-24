@@ -4,13 +4,14 @@
 	<title>test</title>
 	<style type="text/css">
 /* set the background of the body */
-body {
+
+.bgsCover {
+
 	margin: 0;
+	padding: 0;
 	background: url(../static/patch/background-size-polyfill-gh-pages/images/algeria.jpg) center no-repeat;
 	-ms-behavior: url(../static/patch/background-size-polyfill-gh-pages/backgroundsize.min.htc);
 	behavior: url(../static/patch/background-size-polyfill-gh-pages/backgroundsize.min.htc);
-}
-.bgsCover {
 	background-size: cover;
 }
 
@@ -37,7 +38,10 @@ html, body {
 	
 	</style>
 </head>
-<body class="bgsCover">
+<body>
+	<div class="bgsCover" style="height:100%">
+
+	<div>
 
 </body>
 </html>

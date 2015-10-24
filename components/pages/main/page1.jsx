@@ -7,6 +7,7 @@ var Header = require("../../header/header1");
 var Carousel = require("../../carousel/carousel1");
 
 var PictureWall = require("../../picture/pictureWall1");
+var AdBar = require("../../ad/adBar1");
 
 
 var PictureWallImages = 
@@ -66,11 +67,10 @@ var MainPage = React.createClass({
 
                 <Header/>
                 <Carousel images={images}/>
-                <div className="row-flex row-flex-center" style={{"background-color":"white"}}><img src='../../../static/image/ad/bar4.png' /></div>
-        		    <PictureWall pictureNumInLine={12} closeInfo={true} images={PictureWallImages} imgIncrease={50}/>
-                <div className="row-flex row-flex-center" style={{"background-color":"#ff5f89"}}><img src='../../../static/image/ad/bar1.jpg' /></div>
-                <div className="row-flex row-flex-center" style={{"background-color":"white","margin":"20px auto"}}><p>Copyright@2015.Company name All rights reserved.</p></div>
-
+        		    <AdBar bgColor="white"><img src='../../../static/image/ad/bar4.png' /></AdBar>
+                <PictureWall pictureNumInLine={12} closeInfo={true} images={PictureWallImages} imgIncrease={50}/>
+                <AdBar bgColor="#ff5f89"><img src='../../../static/image/ad/bar1.jpg' /></AdBar>
+                <AdBar bgColor="white" margin="20px auto"><p>Copyright@2015.缘定潮汕 All rights reserved.</p></AdBar>
 
         	</div>
         );
