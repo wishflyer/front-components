@@ -4,6 +4,8 @@ var MainPage = require("./pages/main/page1.jsx");
 var LoginPage = require("./pages/login/page1.jsx");
 var RegisterPage = require("./pages/register/page1.jsx");
 
+var Carousal = require("./carousel/carousel2");
+
 var antd = require("../vendors/antd/antd");
 
 
@@ -15,7 +17,7 @@ var ThisPage = React.createClass({
     render: function(){
 
         return(
-        	<RegisterPage/>
+        	<Carousal/>
         	
         );
     }

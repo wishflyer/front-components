@@ -1,0 +1,72 @@
+
+.p24{
+	width:100%;
+	height:500px;
+	overflow:hidden;
+	position: relative;
+}
+.carousel2_content,.p24Content,.p24Zd{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+/*内容*/
+.p24CCContainer{
+	width:980px;
+	height:100%;
+	position: relative;
+	left:50%;
+	margin-left:-450px;
+	float: left;
+}
+.carousel2_title,.carousel2_msg{
+	position: relative;
+	left:100px;
+	font-family:微软雅黑;
+	color:white;
+}
+.carousel2_title{
+	margin-top:100px;
+	font-size:50px;
+}
+.carousel2_msg{
+	line-height: 40px;
+	font-size:20px;
+}
+.carousel2_msg em{
+	font-style:normal;
+	font-size:30px;
+}
+
+/*按钮*/
+.p24Btn{
+	width:200px;
+	position:absolute;
+	bottom:50px;
+	left:50%;
+	z-index: 4;
+	margin-left:-100px;
+}
+.carousel2_btn{
+	float:left;
+	width:50px;
+	height:15px;
+	overflow:hidden;
+	cursor: pointer;
+	background:white;
+	margin-left:1px;
+}
+.carousel2_active{
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
+
+/*遮挡,美观而已*/
+/* .p24Zd{
+	z-index:3;
+	background:url(../../../../static/image/img/bg_visual_grid.png);
+	_background:url('');
+} */
