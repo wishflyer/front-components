@@ -26,7 +26,7 @@ var Login = React.createClass({
 					  <div className="ant-form-item">
 					    <label htmlFor="userName" className="col-6">账号：</label>
 					    <div className="col-14">
-					    	<input className="ant-input" type="text" id="userName" placeholder="请输入账户名" />
+					    	<input className="ant-input" type="text" id="userName" placeholder="请输入账号" />
 					    </div>
 					  </div>
 					  <div className="ant-form-item">
