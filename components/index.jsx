@@ -4,7 +4,6 @@ var MainPage = require("./pages/main/page1.jsx");
 var LoginPage = require("./pages/login/page1.jsx");
 var RegisterPage = require("./pages/register/page1.jsx");
 
-
 var antd = require("../vendors/antd/antd");
 
 

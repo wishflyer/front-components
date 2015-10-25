@@ -1,190 +1,395 @@
 var React = require('react');
-var $ = require('jquery');
-
 
 var antd = require('../../vendors/antd/antd');
-var Popover = antd.Popover;
-var Button = antd.Button;
+
 
 require('../../static/css/components/register/register1.css');
 
-var register_year_content = <div id="register1_content" style={{"width":"470px","height":"125px"}}>
+var Validation = antd.Validation;
+var Validator = Validation.Validator;
+var Select = antd.Select;
+var Option = Select.Option;
+var Radio = antd.Radio;
+var RadioGroup = antd.Radio.Group;
+var Button = antd.Button;
+var Datepicker = antd.Datepicker;
+var InputNumber = antd.InputNumber;
 
-		<div className="row">
-		  	<div className="col-2">90后:</div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1990')">1990</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1991')">1991</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1992')">1992</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1993')">1993</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1994')">1994</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1995')">1995</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1996')">1996</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1997')">1997</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1998')">1998</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1999')">1999</a></div>
-		  </div>
-		<div className="row">
-		  	<div className="col-2">80后:</div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1980')">1980</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1981')">1981</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1982')">1982</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1983')">1983</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1984')">1984</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1985')">1985</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1986')">1986</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1987')">1987</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1988')">1988</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1989')">1989</a></div>
-		  </div>
-		<div className="row">
-		  	<div className="col-2">70后:</div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1970')">1970</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1971')">1971</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1972')">1972</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1973')">1973</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1974')">1974</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1975')">1975</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1976')">1976</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1977')">1977</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1978')">1978</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1979')">1979</a></div>
-		  </div>
-		<div className="row">
-		  	<div className="col-2">60后:</div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1960')">1960</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1961')">1961</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1962')">1962</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1963')">1963</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1964')">1964</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1965')">1965</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1966')">1966</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1967')">1967</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1968')">1968</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1969')">1969</a></div>
-		  </div>
-		<div className="row">
-		  	<div className="col-2">50后:</div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1950')">1950</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1951')">1951</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1952')">1952</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1953')">1953</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1954')">1954</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1955')">1955</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1956')">1956</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1957')">1957</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1958')">1958</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1959')">1959</a></div>
-		  </div>
-		<div className="row">
-		  	<div className="col-2">40后:</div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1940')">1940</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1941')">1941</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1942')">1942</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1943')">1943</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1944')">1944</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1945')">1945</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1946')">1946</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1947')">1947</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1948')">1948</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1949')">1949</a></div>
-		  </div>
-		<div className="row">
-		  	<div className="col-2">30后:</div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1930')">1930</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1931')">1931</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1932')">1932</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1933')">1933</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1934')">1934</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1935')">1935</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1936')">1936</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1937')">1937</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1938')">1938</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_year').html('1939')">1939</a></div>
-		  </div>
-	</div>;
+function cx(classNames) {
+  if (typeof classNames === 'object') {
+    return Object.keys(classNames).filter(function(className) {
+      return classNames[className];
+    }).join(' ');
+  } else {
+    return Array.prototype.join.call(arguments, ' ');
+  }
+}
 
-
-var register_month_content = <div id="register1_content" style={{"width":"450px","height":"25px"}}>
-
-		<div className="row">
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('1')">1</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('2')">2</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('3')">3</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('4')">4</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('5')">5</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('6')">6</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('7')">7</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('8')">8</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('9')">9</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('10')">10</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('11')">11</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_month').html('12')">12</a></div>
-		  </div>
-	</div>;
-
-
-var register_day_content = <div id="register1_content" style={{"width":"450px","height":"50px"}}>
-
-		<div className="row">
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('1')">1</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('2')">2</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('3')">3</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('4')">4</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('5')">5</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('6')">6</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('7')">7</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('8')">8</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('9')">9</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('10')">10</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('11')">11</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('12')">12</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('13')">13</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('14')">14</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('15')">15</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('16')">16</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('17')">17</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('18')">18</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('19')">19</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('20')">20</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('21')">21</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('22')">22</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('23')">23</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('24')">24</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('25')">25</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('26')">26</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('27')">27</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('28')">28</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('29')">29</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('30')">30</a></div>
-		  	<div className="col-2"><a href="javascript:$('#register1_day').html('31')">31</a></div>
-		  </div>
-	</div>;
+function noop() {
+  return false;
+}
 
 
 var Register = React.createClass({
+  mixins: [Validation.FieldMixin],
+
+  getInitialState() {
+    return {
+      status: {
+        email: {},
+        name: {},
+        select: {},
+        radio: {},
+        passwd: {},
+        rePasswd: {},
+        textarea: {},
+        birthday: {},
+        primeNumber: {}
+      },
+      formData: {
+        email: undefined,
+        name: undefined,
+        select: undefined,
+        radio: undefined,
+        passwd: undefined,
+        rePasswd: undefined,
+        textarea: undefined,
+        birthday: undefined,
+        primeNumber: 9
+      },
+      isEmailOver: false, // email 是否输入完毕
+      emailValidateMethod: 'onBlur' // 用于改变 email 的验证方法
+    };
+  },
+
+  renderValidateStyle(item, hasFeedback=true) {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    var classes = cx({
+      'has-feedback': hasFeedback,
+      'has-error': status[item].errors,
+      'is-validating': status[item].isValidating,
+      'has-success': formData[item] && !status[item].errors && !status[item].isValidating
+    });
+
+    return classes;
+  },
+
+  handleEmailInputBlur() {
+    this.setState({
+      isEmailOver: true
+    });
+  },
+
+  handleEmailInputFocus() {
+    if (this.state.isEmailOver) {
+      this.setState({
+        emailValidateMethod: 'onChange'
+      });
+    }
+  },
+
+  handleReset(e) {
+    this.refs.validation.reset();
+    this.setState(this.getInitialState());
+    e.preventDefault();
+  },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState({
+      isEmailOver: true
+    });
+    var validation = this.refs.validation;
+    validation.validate((valid) => {
+      if (!valid) {
+        console.log('error in form');
+        return;
+      } else {
+        console.log('submit');
+      }
+      console.log(this.state.formData);
+    });
+  },
+
+  userExists(rule, value, callback) {
+    if (!value) {
+      callback();
+    } else {
+      setTimeout(function () {
+        if (value === 'Jasonwood') {
+          callback([new Error('抱歉，该用户名已被占用。')]);
+        } else {
+          callback();
+        }
+      }, 800);
+    }
+  },
+
+  checkPass(rule, value, callback) {
+    if (this.state.formData.passwd) {
+      this.refs.validation.forceValidate(['rePasswd']);
+    }
+
+    callback();
+  },
+
+  checkPass2(rule, value, callback) {
+    if (value && value !== this.state.formData.passwd) {
+      callback('两次输入密码不一致！');
+    } else {
+      callback();
+    }
+  },
+
+  checkBirthday(rule, value, callback) {
+    if (value && value.getTime() >= Date.now()){
+      callback(new Error('你不可能在未来出生吧!'));
+    } else {
+      callback();
+    }
+  },
+
+  checkPrime(rule, value, callback) {
+    if (value !== 11) {
+      callback(new Error('8~12之间的质数明明是11啊!'));
+    } else {
+      callback();
+    }
+  },
+
+  render() {
+    var formData = this.state.formData;
+    var status = this.state.status;
+
+    return (
+      <form className="ant-form-horizontal">
+        <Validation ref="validation" onValidate={this.handleValidate}>
 
 
+          <div className="ant-form-item ant-form-item-compact">
+            <label className="col-7" required>我是：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('radio', false)}>
+                <Validator rules={[{required: true, message: '请选择您的性别'}]}>
+                  <RadioGroup name="radio" value={formData.radio}>
+                    <Radio value="male">男生</Radio>
+                    <Radio value="female">女生</Radio>
+                  </RadioGroup>
+                </Validator>
+                {status.radio.errors ? <div className="ant-form-explain">{status.radio.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item ant-form-item-compact">
+            <label className="col-7" required>婚姻状态：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('radio', false)}>
+                <Validator rules={[{required: true, message: '请选择您的性别'}]}>
+                  <RadioGroup name="radio1" value={formData.radio1}>
+                    <Radio value="mdd">未婚</Radio>
+                    <Radio value="female">离异</Radio>
+                    <Radio value="female2">丧偶</Radio>
+                  </RadioGroup>
+                </Validator>
+                {status.radio.errors ? <div className="ant-form-explain">{status.radio.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" htmlFor="name" required>用户名：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('name')}>
+                <Validator rules={[{required: true, min: 5, message: '用户名至少为 5 个字符'}, {validator: this.userExists}]}>
+                  <input name="name" id="name" className="ant-input" value={formData.name} placeholder="实时校验，输入 JasonWood 看看" />
+                </Validator>
+                {status.name.isValidating ? <div className="ant-form-explain">正在校验中...</div> : null}
+                {status.name.errors ? <div className="ant-form-explain">{status.name.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
 
 
-	render: function() {
-		return (
-			<div id="register1" className="col-offset-5">
-			<br/><br/><br/><br/><br/>
+          <div className="ant-form-item">
+            <label className="col-7" htmlFor="name" required>手机号：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('name')}>
+                <Validator rules={[{required: true, min: 5, message: '用户名至少为 5 个字符'}, {validator: this.userExists}]}>
+                  <input name="name" id="name" className="ant-input" value={formData.name} placeholder="实时校验，输入 JasonWood 看看" />
+                </Validator>
+                {status.name.isValidating ? <div className="ant-form-explain">正在校验中...</div> : null}
+                {status.name.errors ? <div className="ant-form-explain">{status.name.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
 
-			  <Popover overlay={register_year_content} placement="bottom" title="请选择年份" trigger="click" prefixCls="register1 ant-popover" overlayStyle={{"left":"308px"}} >
-			    <Button><span id="register1_year">1987</span>年</Button>
-			  </Popover>
-			  	<Popover overlay={register_month_content} placement="bottom" title="请选择月份" trigger="click" prefixCls="register1 ant-popover" overlayStyle={{"left":"308px"}} >
-			    	<Button><span id="register1_month">1</span>月</Button>
-			  </Popover> 
-				<Popover overlay={register_day_content} placement="bottom" title="请选择日期" trigger="click" prefixCls="register1 ant-popover" overlayStyle={{"left":"308px"}} >
-			    	<Button><span id="register1_day">1</span>日</Button>
-			  	</Popover>
-			</div>
-		);
-	}
 
+          <div className="ant-form-item">
+            <label className="col-7" htmlFor="name" required>验证码：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('name')}>
+                <Validator rules={[{required: true, min: 5, message: '用户名至少为 5 个字符'}, {validator: this.userExists}]}>
+                  <input name="name" id="name" className="ant-input" value={formData.name} placeholder="实时校验，输入 JasonWood 看看" />
+                </Validator>
+                {status.name.isValidating ? <div className="ant-form-explain">正在校验中...</div> : null}
+                {status.name.errors ? <div className="ant-form-explain">{status.name.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" htmlFor="email" required>邮箱：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('email', this.state.isEmailOver)}>
+                <Validator rules={[{required: true, type:'email', message: '请输入正确的邮箱地址'}]} trigger={this.state.emailValidateMethod}>
+                  <input name="email" id="email" className="ant-input" value={formData.email}  placeholder="onBlur 与 onChange 相结合" onBlur={this.handleEmailInputBlur} onFocus={this.handleEmailInputFocus} />
+                </Validator>
+                {status.email.errors ? <div className="ant-form-explain">{status.email.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" required>所在城市：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('select', false)}>
+                <Validator rules={[{required: true, message: '请选择您所在的城市'}]}>
+                  <Select size="large" placeholder="所在的城市" style={{width:"100%"}} name="select" value={formData.select}>
+                    <Option value="china">潮州</Option>
+                    <Option value="use">汕头</Option>
+                  </Select>
+                </Validator>
+                {status.select.errors ? <div className="ant-form-explain">{status.select.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" required>所在区域：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('select', false)}>
+                <Validator rules={[{required: true, message: '请选择您所在的区域'}]}>
+                  <Select size="large" placeholder="所在的区域" style={{width:"100%"}} name="select" value={formData.select}>
+                    <Option value="china">潮州</Option>
+                    <Option value="use">汕头</Option>
+                  </Select>
+                </Validator>
+                {status.select.errors ? <div className="ant-form-explain">{status.select.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" htmlFor="name">详细地址：</label>
+            <div className="col-12">
+              <input name="address" id="name" className="ant-input" value={formData.name} placeholder="详细地址" />
+            </div>
+          </div>
+
+
+          <div className="ant-form-item">
+            <label className="col-7" htmlFor="password" required>密码：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('passwd')}>
+                <Validator rules={[{required: true, whitespace: true, message: '请填写密码'}, {validator: this.checkPass}]}>
+                  <input name="passwd" id="password" className="ant-input" type="password" onContextMenu={noop} onPaste={noop} onCopy={noop} onCut={noop} autocomplete="off" value={formData.passwd}/>
+                </Validator>
+                {status.passwd.errors ? <div className="ant-form-explain">{status.passwd.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" htmlFor="password2" required>确认密码：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('rePasswd')}>
+                <Validator rules={[{
+                  required: true,
+                  whitespace: true,
+                  message: '请再次输入密码'
+                }, {validator: this.checkPass2}]}>
+                  <input name="rePasswd" id="password2" className="ant-input" type="password" onContextMenu={noop} onPaste={noop} onCopy={noop} onCut={noop} autocomplete="off" value={formData.rePasswd} placeholder="两次输入密码保持一致"/>
+                </Validator>
+                {status.rePasswd.errors ? <div className="ant-form-explain"> {status.rePasswd.errors.join(', ')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" htmlFor="birthday" required>生日：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('birthday', false)}>
+                <Validator rules={[{
+                  required: true,
+                  type: 'date',
+                  message: '你的生日是什么呢?'
+                }, {validator: this.checkBirthday}]}>
+                  <Datepicker name="birthday" value={formData.birthday}></Datepicker>
+                </Validator>
+                {status.birthday.errors ? <div className="ant-form-explain"> {status.birthday.errors.join(', ')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" required>所在区域：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('select', false)}>
+                <Validator rules={[{required: true, message: '请选择您的身高'}]}>
+                  <Select size="large" placeholder="您的身高" style={{width:"100%"}} name="select" value={formData.select}>
+                    <Option value="china">潮州</Option>
+                    <Option value="use">汕头</Option>
+                  </Select>
+                </Validator>
+                {status.select.errors ? <div className="ant-form-explain">{status.select.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" required>所在区域：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('select', false)}>
+                <Validator rules={[{required: true, message: '您的收入状况'}]}>
+                  <Select size="large" placeholder="您的收入状况" style={{width:"100%"}} name="select" value={formData.select}>
+                    <Option value="china">5000元</Option>
+                    <Option value="use">10000元</Option>
+                  </Select>
+                </Validator>
+                {status.select.errors ? <div className="ant-form-explain">{status.select.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <label className="col-7" htmlFor="remark" required>备注：</label>
+            <div className="col-12">
+              <div className={this.renderValidateStyle('textarea', false)}>
+                <Validator rules={[{required: true, message: '真的不打算写点什么吗？'}]}>
+                  <textarea className="ant-input" id="remark" name="textarea" value={formData.textarea} placeholder="写点什么吧">
+                  </textarea>
+                </Validator>
+                {status.textarea.errors ? <div className="ant-form-explain">{status.textarea.errors.join(',')}</div> : null}
+              </div>
+            </div>
+          </div>
+
+          <div className="ant-form-item">
+            <div className="col-offset-7 col-12">
+              <Button type="primary" onClick={this.handleSubmit}>确 定</Button>
+            &nbsp;&nbsp;&nbsp;
+              <Button onClick={this.handleReset}>重 置</Button>
+            </div>
+          </div>
+        </Validation>
+      </form>
+    );
+  }
 });
+
 
 module.exports = Register;
 
