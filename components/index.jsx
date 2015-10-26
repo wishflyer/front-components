@@ -17,8 +17,9 @@ var ThisPage = React.createClass({
     render: function(){
 
         return(
+        	<div>
         	<Carousal/>
-        	
+        	</div>
         );
     }
 });

@@ -3,19 +3,38 @@
 <head>
 	<title></title>
 	<script src="../../vendors/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../../vendors/plugins/jquery.ez-bg-resize.js" type="text/javascript" charset="utf-8"></script>
 	<script>
-		$(document).ready(function() {
-			$("body").ezBgResize({
-				img     : "../../static/image/bigbar3.jpg", // Relative path example.  You could also use an absolute url (http://...).
-				opacity : 1, // Opacity. 1 = 100%.  This is optional.
-				center  : true // Boolean (true or false). This is optional. Default is true.
-			});
-		});
+
 	</script>
+
+	<style type="text/css">
+
+	.father{
+		margin-left: 200px;
+		width:500px;
+		height:500px;
+		background-color: red;
+		left:200px;
+	}		
+
+
+	.son{
+		width:50px;
+		height:50px;
+		background-color: blue;
+		position: relative;
+		left:100px;
+	}	
+
+
+	</style>
 
 </head>
 <body>
+	<div class="father">
+		<div class="son">
 
+		</div>
+	</div>
 </body>
 </html>
