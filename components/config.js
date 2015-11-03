@@ -1,6 +1,9 @@
 
-var Config = {
-	RouteConfig : {
+console.log("config load start....");
+
+window.dd = window.dd || {}
+
+window.dd.RouteConfig = {
 		"../js/pages/index.jsx":/^\/$/ig,
 		"../js/test/page1.jsx":/test\/page1/ig,
 		"../js/test/page2.jsx":/test\/page2/ig,
@@ -12,11 +15,11 @@ var Config = {
 		"../js/pages/report-config.jsx":/report\/config/ig,
 		"../js/pages/metadata.jsx":/report\/metadata/ig,
 		"../js/pages/show-report.jsx":/showReport\/[^\/*]/ig
-	}
+	
 }
 
 //配置路由信息
-.
 
-module.exports = Config;
+window.dd.vendorsPath = "./vendors/"
 
+console.log("config load....");
