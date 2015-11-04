@@ -123,29 +123,29 @@ var AddressSelect = React.createClass({
 	   if(areaOptions){
 
 			return (
-				    <div>
-				      <Select defaultValue={provinceData[0]} style={{width:150}} onChange={this.handleProvinceChange}>
+				    <span>
+				      <Select defaultValue={provinceData[0]} style={{width:130}} onChange={this.handleProvinceChange}>
 				        {provinceOptions}
 				      </Select>
-				      <Select value={this.state.secondCity} style={{width:150}} onChange={this.onSecondCityChange}>
+				      <Select value={this.state.secondCity} style={{width:130}} onChange={this.onSecondCityChange}>
 				        {cityOptions}
 				      </Select>
-				      	<Select value={this.state.secondArea} style={{width:150}} onChange={this.onSecondAreaChange}>
+				      	<Select value={this.state.secondArea} style={{width:130}} onChange={this.onSecondAreaChange}>
 				        	{areaOptions}
 				      	</Select>
-				    </div>
+				    </span>
 				    );
 
 		}else{
 			 return (
-			    	<div>
-				      <Select defaultValue={provinceData[0]} style={{width:150}} onChange={this.handleProvinceChange}>
+			    	<span>
+				      <Select defaultValue={provinceData[0]} style={{width:130}} onChange={this.handleProvinceChange}>
 				        {provinceOptions}
 				      </Select>
-				      <Select value={this.state.secondCity} style={{width:150}} onChange={this.onSecondCityChange}>
+				      <Select value={this.state.secondCity} style={{width:130}} onChange={this.onSecondCityChange}>
 				        {cityOptions}
 				      </Select>
-				    </div>
+				    </span>
 	    			);
 		}
 
