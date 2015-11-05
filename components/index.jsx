@@ -6,13 +6,19 @@ var RegisterPage = require("./pages/register/page1.jsx");
 
 require('./config.js');
 
-var Carousal = require("./carousel/carousel2");
+var Carousal1 = require("./carousel/carousel1");
+var Carousal2 = require("./carousel/carousel2");
 
 var SearchBar = require("./searchBar/searchBar1");
 
 var antd = require("../vendors/antd/antd");
 
 var PictureWall = require('./picture/pictureWall2');
+
+
+var SuperSlideCarousel215 = require("./carousel/superSlideCarousel2.15");
+var SuperSlideCarousel219 = require("./carousel/superSlideCarousel2.19");
+var SuperSlideCarousel226 = require("./carousel/superSlideCarousel2.26");
 
 require("../vendors/antd/antd.css");
 
@@ -41,8 +47,10 @@ var ThisPage = React.createClass({
 
         return(
         	<div >
-        	<SearchBar/>
-        	    <PictureWall pictureNumInLine={6}  images={PictureWallImages} imgIncrease={50}/>
+
+
+
+        	    <SuperSlideCarousel219/>
         	</div>
         );
     }

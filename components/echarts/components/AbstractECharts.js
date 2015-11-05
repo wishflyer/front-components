@@ -126,7 +126,7 @@ var AbstractECharts = {
     componentDidMount: function () {
 
         AbstractECharts.statics.chartRefs.push(this);
-
+/*
         var flag = Tools.loadScriptWithLock("echarts-all","./vendors/echarts/source/echarts-all.js",function(){
 
                         //对每一个未加载的图表进行刷新
@@ -139,7 +139,18 @@ var AbstractECharts = {
         if(flag){
             //脚本已加载，直接加载图表
             this.renderChart();
-        }
+        }*/
+
+
+        Tools.loadScriptWithLock("echarts-all","./vendors/echarts/source/echarts-all.js",function(){
+
+            //对每一个未加载的图表进行刷新
+            AbstractECharts.statics.chartRefs.map(function(chart) {
+                chart.renderChart();
+            })
+
+        });
+        
         
     },
  

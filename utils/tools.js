@@ -105,7 +105,9 @@ var Tools = {
     },
 
     loadScriptWithLock : function(scriptName, url, callback) {
+        //如果真，说明已加载，直接运行callback即可
         if(this.scriptName === true){
+            callback();
             return true;
         }
         if(this.scriptName == undefined){
@@ -139,6 +141,72 @@ var Tools = {
             script.src = url;
             document.body.appendChild(script);
         }
+        //如果到这里，说明前面处于加载中状态
+        return false; 
+    },
+
+
+
+    loadScriptAuto : function(scriptName, url, callback) {
+        //如果真，说明已加载，直接运行callback即可
+        if(this.scriptName === true){
+            callback();
+            return true;
+        }
+        if(this.scriptName == undefined){
+            this.scriptName = false;
+            var _this = this;
+            //加载脚本
+            var script = document.createElement("script");
+            if(!callback) callback  = function(){}
+            // IE
+            if (script.readyState) {
+                script.onreadystatechange = function () {
+                    if (script.readyState == "loaded" || script.readyState == "complete") {
+                        script.onreadystatechange = null;
+                        _this.scriptName = true;//加载完成
+                        callback();//回调
+
+                        //调用之前未加载的callback
+                        window.dd = window.dd || {}
+                        window.dd.loadScript = window.dd.loadScript || {}
+                        window.dd.loadScript.scriptName = window.dd.loadScript.scriptName || []
+                        for(var i in window.dd.loadScript.scriptName){
+                            window.dd.loadScript.scriptName[i]()
+                        }
+                    }
+                };
+            } else { // others
+                script.onload = function () {
+                    _this.scriptName = true;//加载完成
+                    callback();
+
+                    //调用之前未加载的callback
+                    window.dd = window.dd || {}
+                    window.dd.loadScript = window.dd.loadScript || {}
+                    window.dd.loadScript.scriptName = window.dd.loadScript.scriptName || []
+                    for(var i in window.dd.loadScript.scriptName){
+                        window.dd.loadScript.scriptName[i]()
+                    }   
+                };
+            }
+            var rgJS = /^(.+)\.js$/ig;
+            var rgJSX = /^(.+)\.jsx$/ig;
+            if(rgJS.test(url))
+                script.type = "text/javascript";
+            if(rgJSX.test(url))
+                script.type = "text/jsx";
+
+            script.src = url;
+            document.body.appendChild(script);
+            return undefined;
+        }
+        //如果到这里，说明前面处于加载中状态
+        //未加载的callback压入数组中待调用
+        window.dd = window.dd || {}
+        window.dd.loadScript = window.dd.loadScript || {}
+        window.dd.loadScript.scriptName = window.dd.loadScript.scriptName || []
+        window.dd.loadScript.scriptName.push(callback)
         return false; 
     },
 
