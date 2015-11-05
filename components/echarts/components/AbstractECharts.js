@@ -142,7 +142,7 @@ var AbstractECharts = {
         }*/
 
 
-        Tools.loadScriptWithLock("echarts-all","./vendors/echarts/source/echarts-all.js",function(){
+        Tools.loadScriptWithLock("echarts-all",window.dd.vendorsPath+"echarts/source/echarts-all.js",function(){
 
             //对每一个未加载的图表进行刷新
             AbstractECharts.statics.chartRefs.map(function(chart) {

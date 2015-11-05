@@ -15,6 +15,8 @@ var antd = require("../vendors/antd/antd");
 
 var PictureWall = require('./picture/pictureWall2');
 
+var Demo = require('./demo/demo');
+
 
 var SuperSlideCarousel215 = require("./carousel/superSlideCarousel2.15");
 var SuperSlideCarousel219 = require("./carousel/superSlideCarousel2.19");
@@ -45,12 +47,16 @@ var ThisPage = React.createClass({
 
     render: function(){
 
+        var DemoCss = {
+          "margin": "auto",
+          "width":"80%"
+        }
+
         return(
-        	<div >
+        	<div style={DemoCss}>
 
+            <Demo/>
 
-
-        	    <SuperSlideCarousel219/>
         	</div>
         );
     }
