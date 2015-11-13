@@ -70,13 +70,13 @@ var Demo = React.createClass({
 					<AdBar1 bgColor="grey"><img src='../../static/image/1.jpg' /></AdBar1>
 			    </TabPane>
 			    <TabPane tab="carousel" key="2">
+			    	<SuperMarquee2/>
 			    	<Carousel1/>
 			    	<Carousel2/>
 			    	<SuperSlideCarousel219/>
 			    	<SuperSlideCarousel215/>
 			    	<SuperSlideCarousel226/>
 			    	<SuperSlideCarousel204/>
-			    	<SuperMarquee2/>
 			    </TabPane>
 			    <TabPane tab="ECharts" key="3">
 			    	<div className="col-8">
