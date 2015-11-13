@@ -18,9 +18,11 @@ var PictureWall = require('./picture/pictureWall2');
 var Demo = require('./demo/demo');
 
 
+var SuperMarquee2 = require("./carousel/superMarquee2");
 var SuperSlideCarousel215 = require("./carousel/superSlideCarousel2.15");
 var SuperSlideCarousel219 = require("./carousel/superSlideCarousel2.19");
 var SuperSlideCarousel226 = require("./carousel/superSlideCarousel2.26");
+var SuperSlideCarousel204 = require("./carousel/superSlideCarousel2.4");
 
 require("../vendors/antd/antd.css");
 

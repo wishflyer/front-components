@@ -1,4 +1,5 @@
 var $ = require('jQuery');
+var Debug = require('./debug.js')
 
 var Tools = {
     uuid : function() {
@@ -31,7 +32,7 @@ var Tools = {
 
         return newObj; 
     },
-
+/*
     loadScript : function(url, callback) {
         var script = document.createElement("script");
 
@@ -60,7 +61,7 @@ var Tools = {
 
         script.src = url;
         document.body.appendChild(script);
-    },
+    },*/
 
     loadCSS : function(url, callback) {
         var node = document.createElement("link");
@@ -87,7 +88,7 @@ var Tools = {
         document.getElementsByTagName('head')[0].appendChild(node);
     },
 
-
+/*
     loadScriptsWithNoCallback : function(url) {
         var script = document.createElement("script");
         var length = url.length;
@@ -102,8 +103,8 @@ var Tools = {
             script.src = url[i];
             document.body.appendChild(script);
         }
-    },
-
+    },*/
+/*
     loadScriptWithLock : function(scriptName, url, callback) {
         //如果真，说明已加载，直接运行callback即可
         if(this.scriptName === true){
@@ -144,17 +145,26 @@ var Tools = {
         //如果到这里，说明前面处于加载中状态
         return false; 
     },
-
+*/
 
 
     loadScriptAuto : function(scriptName, url, callback) {
+
+
+        window.dd = window.dd || {}
+        window.dd.loadScripts = window.dd.loadScripts || {}
+        this.loadScriptName = this.loadScriptName || {}
+
+        //console.log("this.loadScriptName:"+this.loadScriptName)
         //如果真，说明已加载，直接运行callback即可
-        if(this.scriptName === true){
+        if(this.loadScriptName[scriptName] === true){
+            //console.log("url:"+url+" 已加载，直接执行回调")
             callback();
             return true;
         }
-        if(this.scriptName == undefined){
-            this.scriptName = false;
+        //console.log(scriptName+"未加载，判断情况")
+        if(this.loadScriptName[scriptName] == undefined){
+            this.loadScriptName[scriptName] = false;
             var _this = this;
             //加载脚本
             var script = document.createElement("script");
@@ -164,30 +174,37 @@ var Tools = {
                 script.onreadystatechange = function () {
                     if (script.readyState == "loaded" || script.readyState == "complete") {
                         script.onreadystatechange = null;
-                        _this.scriptName = true;//加载完成
+                        _this.loadScriptName[scriptName] = true;//加载完成
+                        //console.log("url:"+url+" 加载完成执行回调")
                         callback();//回调
 
                         //调用之前未加载的callback
-                        window.dd = window.dd || {}
-                        window.dd.loadScript = window.dd.loadScript || {}
-                        window.dd.loadScript.scriptName = window.dd.loadScript.scriptName || []
-                        for(var i in window.dd.loadScript.scriptName){
-                            window.dd.loadScript.scriptName[i]()
+                        for(var i in window.dd.loadScripts[scriptName]){
+                            //console.log("回调函数：",window.dd.loadScripts[scriptName][i])
+                            window.dd.loadScripts[scriptName][i]()
                         }
+
+                        //console.log("回调执行完毕")
+
                     }
                 };
             } else { // others
                 script.onload = function () {
-                    _this.scriptName = true;//加载完成
+                    _this.loadScriptName[scriptName] = true;//加载完成
+
+                    //console.log("url:"+url+" 加载完成执行回调"+" scriptName:"+scriptName)
+                    //console.log("回调函数：",window.dd.loadScripts)
+                    //console.log("回调函数："+window.dd.loadScripts.scriptName)
                     callback();
 
                     //调用之前未加载的callback
-                    window.dd = window.dd || {}
-                    window.dd.loadScript = window.dd.loadScript || {}
-                    window.dd.loadScript.scriptName = window.dd.loadScript.scriptName || []
-                    for(var i in window.dd.loadScript.scriptName){
-                        window.dd.loadScript.scriptName[i]()
-                    }   
+                    for(var i in window.dd.loadScripts[scriptName]){
+                        //console.log("回调函数：",window.dd.loadScripts[scriptName][i])
+                        window.dd.loadScripts[scriptName][i]()
+                    }
+
+                    //console.log("回调执行完毕")
+
                 };
             }
             var rgJS = /^(.+)\.js$/ig;
@@ -201,12 +218,12 @@ var Tools = {
             document.body.appendChild(script);
             return undefined;
         }
+        //console.log("将未加载的callback压入数组中待调用"+scriptName)
         //如果到这里，说明前面处于加载中状态
         //未加载的callback压入数组中待调用
-        window.dd = window.dd || {}
-        window.dd.loadScript = window.dd.loadScript || {}
-        window.dd.loadScript.scriptName = window.dd.loadScript.scriptName || []
-        window.dd.loadScript.scriptName.push(callback)
+        window.dd.loadScripts[scriptName] = window.dd.loadScripts[scriptName] || []
+        window.dd.loadScripts[scriptName].push(callback)
+
         return false; 
     },
 

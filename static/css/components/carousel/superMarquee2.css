@@ -1,0 +1,4 @@
+/* #marquee2 */
+#marquee2{width:150px;height:450px;overflow:hidden;}
+#marquee2 ul li{float:left;border:0;height:150px;}
+#marquee2 ul li img{display:block;}

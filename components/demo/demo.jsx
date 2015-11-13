@@ -10,6 +10,8 @@ var AdBar1 = require('../ad/adBar1');
 
 var Carousel1 = require("../carousel/carousel1");
 var Carousel2 = require("../carousel/carousel2");
+var SuperMarquee2 = require("../carousel/superMarquee2");
+var SuperSlideCarousel204 = require("../carousel/superSlideCarousel2.4");
 var SuperSlideCarousel215 = require("../carousel/superSlideCarousel2.15");
 var SuperSlideCarousel219 = require("../carousel/superSlideCarousel2.19");
 var SuperSlideCarousel226 = require("../carousel/superSlideCarousel2.26");
@@ -63,16 +65,18 @@ var Demo = React.createClass({
 		return (
 			<div>
 
-			<Tabs defaultActiveKey="1">
+			<Tabs defaultActiveKey="2">
 			    <TabPane tab="ad" key="1">
 					<AdBar1 bgColor="grey"><img src='../../static/image/1.jpg' /></AdBar1>
 			    </TabPane>
 			    <TabPane tab="carousel" key="2">
 			    	<Carousel1/>
 			    	<Carousel2/>
-			    	<SuperSlideCarousel215/>
 			    	<SuperSlideCarousel219/>
+			    	<SuperSlideCarousel215/>
 			    	<SuperSlideCarousel226/>
+			    	<SuperSlideCarousel204/>
+			    	<SuperMarquee2/>
 			    </TabPane>
 			    <TabPane tab="ECharts" key="3">
 			    	<div className="col-8">
@@ -107,9 +111,19 @@ var Demo = React.createClass({
 				</TabPane>
 
 			    <TabPane tab="PictureWall" key="6">
-			    	<PictureWall1/>
-			    	<hr/>
-			    	<PictureWall2/>
+			   		
+			    	<div className="row">
+				    	<div className="col-16">
+				    		<PictureWall1 pictureNumInLine={12} closeInfo={true} imgIncrease={30} border="0px solid white"/>
+				    	</div>
+				    	<div className="col-8">
+			    		<PictureWall1 pictureNumInLine={8} closeInfo={true} imgIncrease={0} border="1px solid white"/>
+			    		</div>
+				    </div>
+				    <div className="row">
+				    	<PictureWall2/>
+				    </div>
+			    	
 				</TabPane>
 
 			    <TabPane tab="SearchBar" key="7">
