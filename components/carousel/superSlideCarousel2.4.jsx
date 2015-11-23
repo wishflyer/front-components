@@ -13,7 +13,7 @@ var SuperSlideCarousel = React.createClass({
 	},
 
 	componentDidMount: function() {
-		Tools.loadScriptAuto("superSlide",window.dd.vendorsPath+"superSlide/jquery.SuperSlide.js",function(){
+		Tools.loadScript(window.dd.vendorsPath+"superSlide/jquery.SuperSlide.js",function(){
 
 			//大图切换
 			window.$(".superSlide .game163").slide({ titCell:".smallImg li", mainCell:".bigImg", effect:"fold", autoPlay:true,delayTime:200,

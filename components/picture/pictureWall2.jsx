@@ -1,7 +1,7 @@
 var React = require('react');
 
 
-var antd = require('../../vendors/antd/antd');
+var antd = require("antd");
 var Button = antd.Button;
 
 var PictureWall = React.createClass({

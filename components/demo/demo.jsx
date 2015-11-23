@@ -1,7 +1,7 @@
 var React = require('react');
 
 var $ =  require('jQuery');
-var antd = require('../../vendors/antd/antd');
+var antd = require("antd");
 
 var Tabs = antd.Tabs;
 var TabPane = Tabs.TabPane;

@@ -1,6 +1,6 @@
 var React = require('react');
 
-var antd = require('../../vendors/antd/antd');
+var antd = require("antd");
 
 var Select  = antd.Select;
 var Option = Select.Option;

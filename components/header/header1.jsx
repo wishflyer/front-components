@@ -1,8 +1,9 @@
 var React = require("react");
 
-var antd = require("../../vendors/antd/antd");
+var antd = require("antd");
 
 require("../../static/css/components/header/header1.css");
+
 
 var Menu = antd.Menu;
 var SubMenu = Menu.SubMenu;

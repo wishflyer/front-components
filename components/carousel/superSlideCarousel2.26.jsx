@@ -7,7 +7,7 @@ require('../../static/css/components/carousel/superSlideCarousel2.26.css');
 var SuperSlideCarousel = React.createClass({
 
 	componentDidMount: function() {
-		Tools.loadScriptAuto("superSlide",window.dd.vendorsPath+"superSlide/jquery.SuperSlide.js",function(){
+		Tools.loadScript(window.dd.vendorsPath+"superSlide/jquery.SuperSlide.js",function(){
 			/* 把最后一个放到第一个前面，然后通过外层ul{margin-left:-980px !important; }来显示第一个 */
 			window.$(".superSlide .slider .bd li").first().before( window.$("superSlide .slider .bd li").last() );
 			/* 控制左右按钮显示 */

@@ -2,7 +2,7 @@ var React = require('react');
 var $ = require('jquery');
 
 
-var antd = require('../../vendors/antd/antd');
+var antd = require("antd");
 var Popover = antd.Popover;
 var Button = antd.Button;
 

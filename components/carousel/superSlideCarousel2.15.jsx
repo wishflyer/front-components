@@ -7,7 +7,7 @@ require('../../static/css/components/carousel/superSlideCarousel2.15.css');
 var SuperSlideCarousel = React.createClass({
 
 	componentDidMount: function() {
-		Tools.loadScriptAuto("superSlide",window.dd.vendorsPath+"superSlide/jquery.SuperSlide.js",function(){
+		Tools.loadScript(window.dd.vendorsPath+"superSlide/jquery.SuperSlide.js",function(){
 			/*鼠标移过，左右按钮显示*/
 			window.$(".superSlide .focusBox").hover(function(){ $(this).find(".prev,.next").stop(true,true).fadeTo("show",0.2) },function(){ $(this).find(".prev,.next").fadeOut() });
 			/*SuperSlide图片切换*/

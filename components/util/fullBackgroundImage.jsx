@@ -12,7 +12,7 @@ var FullBackgroundImage = React.createClass({
 	componentDidMount: function() {
 
 		var self = this;
-		Tools.loadScriptWithLock("ezBgResize","../../vendors/plugins/jquery.ez-bg-resize.js",function(){
+		Tools.loadScript("../../vendors/plugins/jquery.ez-bg-resize.js",function(){
 
 		  	window.$(".loginBlackgroundCover").ezBgResize({
             	img     : self.props.bgImage, // Relative path example.  You could also use an absolute url (http://...).

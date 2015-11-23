@@ -7,7 +7,7 @@ var FullBackgroundImage = require('../../util/fullBackgroundImage');
 
 var Opacity = require('../../util/opacity');
 
-var antd = require('../../../vendors/antd/antd');
+var antd = require("antd");
 
 
 var RegisterPage = React.createClass({

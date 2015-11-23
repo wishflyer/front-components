@@ -15,7 +15,6 @@ var AbstractECharts = {
 
     statics:{
 
-        chartRefs:[],
         /**
          * 获得该组件的报表引用
          * @static
@@ -125,33 +124,8 @@ var AbstractECharts = {
 
     componentDidMount: function () {
 
-        AbstractECharts.statics.chartRefs.push(this);
-/*
-        var flag = Tools.loadScriptWithLock("echarts-all","./vendors/echarts/source/echarts-all.js",function(){
-
-                        //对每一个未加载的图表进行刷新
-                        AbstractECharts.statics.chartRefs.map(function(chart) {
-                            chart.renderChart();
-                        })
-
-                    });
-        
-        if(flag){
-            //脚本已加载，直接加载图表
-            this.renderChart();
-        }*/
-
-
-        /*Tools.loadScriptWithLock("echarts-all",window.dd.vendorsPath+"echarts/source/echarts-all.js",function(){
-
-            //对每一个未加载的图表进行刷新
-            AbstractECharts.statics.chartRefs.map(function(chart) {
-                chart.renderChart();
-            })
-
-        });*/
         var self = this;
-        Tools.loadScriptAuto("echarts-all",window.dd.vendorsPath+"echarts/source/echarts-all.js",function(){
+        Tools.loadScript(window.dd.vendorsPath+"echarts/source/echarts-all.js",function(){
 
             self.renderChart();
 

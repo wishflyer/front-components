@@ -1,6 +1,8 @@
 
 var React = require("react");
-var antd = require("../../vendors/antd/antd");
+var ReactDOM = require('react-dom');
+
+var antd = require("antd");
 
 var Carousel = antd.Carousel;
 
@@ -25,7 +27,7 @@ var Carousel1 = React.createClass({
 				<Carousel dots="false" autoplay="true">
 					{
 						this.props.images.map(function(img){
-							return <div style={{height:self.props.height,width:self.props.width}}><a href={img.url}><img src={img.src} style={{width:"100%"}}/></a></div>
+							return <div key={img.src} style={{height:self.props.height,width:self.props.width}}><a href={img.url}><img src={img.src} style={{width:"100%"}}/></a>	</div>
 						})
 					}
 				</Carousel>

@@ -1,9 +1,10 @@
-var React = require('react');
+var React = require("react");
+var ReactDOM = require('react-dom');
 
 var $ = require('jQuery');
 var Tools = require('../../utils/tools');
 
-var antd = require('../../vendors/antd/antd');
+var antd = require('antd');
 
 var Select  = antd.Select;
 var Option = Select.Option;
@@ -124,27 +125,17 @@ var AddressSelect = React.createClass({
 
 			return (
 				    <span>
-				      <Select defaultValue={provinceData[0]} style={{width:130}} onChange={this.handleProvinceChange}>
-				        {provinceOptions}
-				      </Select>
-				      <Select value={this.state.secondCity} style={{width:130}} onChange={this.onSecondCityChange}>
-				        {cityOptions}
-				      </Select>
-				      	<Select value={this.state.secondArea} style={{width:130}} onChange={this.onSecondAreaChange}>
-				        	{areaOptions}
-				      	</Select>
+				      <Select defaultValue={provinceData[0]} style={{width:130}} onChange={this.handleProvinceChange}>{provinceOptions}</Select>
+				      <Select value={this.state.secondCity} style={{width:130}} onChange={this.onSecondCityChange}>{cityOptions}</Select>
+				      <Select value={this.state.secondArea} style={{width:130}} onChange={this.onSecondAreaChange}>{areaOptions}</Select>
 				    </span>
 				    );
 
 		}else{
 			 return (
 			    	<span>
-				      <Select defaultValue={provinceData[0]} style={{width:130}} onChange={this.handleProvinceChange}>
-				        {provinceOptions}
-				      </Select>
-				      <Select value={this.state.secondCity} style={{width:130}} onChange={this.onSecondCityChange}>
-				        {cityOptions}
-				      </Select>
+				      <Select defaultValue={provinceData[0]} style={{width:130}} onChange={this.handleProvinceChange}>{provinceOptions}</Select>
+				      <Select value={this.state.secondCity} style={{width:130}} onChange={this.onSecondCityChange}>{cityOptions}</Select>
 				    </span>
 	    			);
 		}

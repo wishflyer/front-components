@@ -32,178 +32,53 @@ var Tools = {
 
         return newObj; 
     },
-/*
+
     loadScript : function(url, callback) {
-        var script = document.createElement("script");
-
-        if(!callback) callback  = function(){}
-
-        // IE
-        if (script.readyState) {
-            script.onreadystatechange = function () {
-                if (script.readyState == "loaded" || script.readyState == "complete") {
-                    script.onreadystatechange = null;
-                    callback();
-                }
-            };
-        } else { // others
-            script.onload = function () {
-                callback();
-            };
-        }
-
-        var rgJS = /^(.+)\.js$/ig;
-        var rgJSX = /^(.+)\.jsx$/ig;
-        if(rgJS.test(url))
-            script.type = "text/javascript";
-        if(rgJSX.test(url))
-            script.type = "text/jsx";
-
-        script.src = url;
-        document.body.appendChild(script);
-    },*/
-
-    loadCSS : function(url, callback) {
-        var node = document.createElement("link");
-
-        if(!callback) callback  = function(){}
-
-        // IE
-        if (node.readyState) {
-            node.onreadystatechange = function () {
-                if (node.readyState == "loaded" || node.readyState == "complete") {
-                    node.onreadystatechange = null;
-                    callback();
-                }
-            };
-        } else { // others
-            node.onload = function () {
-                callback();
-            };
-        }
-
-        node.rel = 'stylesheet';
-        node.type = "text/css";
-        node.href = url;
-        document.getElementsByTagName('head')[0].appendChild(node);
-    },
-
-/*
-    loadScriptsWithNoCallback : function(url) {
-        var script = document.createElement("script");
-        var length = url.length;
-        for(var i = 0;i < length; i++){ //自适应插入.jsx文件
-            var script = document.createElement("script");
-            var rgJS = /^(.+)\.js$/ig;
-            var rgJSX = /^(.+)\.jsx$/ig;
-            if(rgJS.test(url[i]))
-                script.type = "text/javascript";
-            if(rgJSX.test(url[i]))
-                script.type = "text/jsx";
-            script.src = url[i];
-            document.body.appendChild(script);
-        }
-    },*/
-/*
-    loadScriptWithLock : function(scriptName, url, callback) {
-        //如果真，说明已加载，直接运行callback即可
-        if(this.scriptName === true){
-            callback();
-            return true;
-        }
-        if(this.scriptName == undefined){
-            this.scriptName = false;
-            var _this = this;
-            //加载脚本
-            var script = document.createElement("script");
-            if(!callback) callback  = function(){}
-            // IE
-            if (script.readyState) {
-                script.onreadystatechange = function () {
-                    if (script.readyState == "loaded" || script.readyState == "complete") {
-                        script.onreadystatechange = null;
-                        _this.scriptName = true;//加载完成
-                        callback();//回调
-                    }
-                };
-            } else { // others
-                script.onload = function () {
-                    _this.scriptName = true;//加载完成
-                    callback();
-                };
-            }
-            var rgJS = /^(.+)\.js$/ig;
-            var rgJSX = /^(.+)\.jsx$/ig;
-            if(rgJS.test(url))
-                script.type = "text/javascript";
-            if(rgJSX.test(url))
-                script.type = "text/jsx";
-
-            script.src = url;
-            document.body.appendChild(script);
-        }
-        //如果到这里，说明前面处于加载中状态
-        return false; 
-    },
-*/
-
-
-    loadScriptAuto : function(scriptName, url, callback) {
-
 
         window.dd = window.dd || {}
-        window.dd.loadScripts = window.dd.loadScripts || {}
-        this.loadScriptName = this.loadScriptName || {}
+        window.dd.loadScriptCallback = window.dd.loadScriptCallback || {}
+        window.dd.loadScriptURL = window.dd.loadScriptURL || {}
 
-        //console.log("this.loadScriptName:"+this.loadScriptName)
+        if(!callback) callback  = function(){}
+
         //如果真，说明已加载，直接运行callback即可
-        if(this.loadScriptName[scriptName] === true){
-            //console.log("url:"+url+" 已加载，直接执行回调")
+        if(window.dd.loadScriptURL[url] === true){
             callback();
             return true;
         }
-        //console.log(scriptName+"未加载，判断情况")
-        if(this.loadScriptName[scriptName] == undefined){
-            this.loadScriptName[scriptName] = false;
-            var _this = this;
+        //console.log(url+"未加载，判断情况")
+        if(window.dd.loadScriptURL[url] == undefined){
+            window.dd.loadScriptURL[url] = false;
             //加载脚本
             var script = document.createElement("script");
-            if(!callback) callback  = function(){}
+            
             // IE
             if (script.readyState) {
                 script.onreadystatechange = function () {
                     if (script.readyState == "loaded" || script.readyState == "complete") {
                         script.onreadystatechange = null;
-                        _this.loadScriptName[scriptName] = true;//加载完成
-                        //console.log("url:"+url+" 加载完成执行回调")
+                        window.dd.loadScriptURL[url] = true;//加载完成
                         callback();//回调
 
                         //调用之前未加载的callback
-                        for(var i in window.dd.loadScripts[scriptName]){
-                            //console.log("回调函数：",window.dd.loadScripts[scriptName][i])
-                            window.dd.loadScripts[scriptName][i]()
+                        for(var i in window.dd.loadScriptCallback[url]){
+                            window.dd.loadScriptCallback[url][i]()
                         }
 
-                        //console.log("回调执行完毕")
 
                     }
                 };
             } else { // others
                 script.onload = function () {
-                    _this.loadScriptName[scriptName] = true;//加载完成
+                    window.dd.loadScriptURL[url] = true;//加载完成
 
-                    //console.log("url:"+url+" 加载完成执行回调"+" scriptName:"+scriptName)
-                    //console.log("回调函数：",window.dd.loadScripts)
-                    //console.log("回调函数："+window.dd.loadScripts.scriptName)
                     callback();
 
                     //调用之前未加载的callback
-                    for(var i in window.dd.loadScripts[scriptName]){
-                        //console.log("回调函数：",window.dd.loadScripts[scriptName][i])
-                        window.dd.loadScripts[scriptName][i]()
-                    }
+                    for(var i in window.dd.loadScriptCallback[url]){
 
-                    //console.log("回调执行完毕")
+                        window.dd.loadScriptCallback[url][i]()
+                    }
 
                 };
             }
@@ -218,48 +93,79 @@ var Tools = {
             document.body.appendChild(script);
             return undefined;
         }
-        //console.log("将未加载的callback压入数组中待调用"+scriptName)
         //如果到这里，说明前面处于加载中状态
         //未加载的callback压入数组中待调用
-        window.dd.loadScripts[scriptName] = window.dd.loadScripts[scriptName] || []
-        window.dd.loadScripts[scriptName].push(callback)
+        window.dd.loadScriptCallback[url] = window.dd.loadScriptCallback[url] || []
+        window.dd.loadScriptCallback[url].push(callback)
 
         return false; 
     },
 
-    loadCSSWithLock : function(cssName, url, callback) {
-        if(this.cssName === true){
+
+    loadCSS : function(url, callback) {
+
+        window.dd = window.dd || {}
+        window.dd.loadCSSCallback = window.dd.loadCSSCallback || {}
+        window.dd.loadCSSURL = window.dd.loadCSSURL || {}
+
+        if(!callback) callback  = function(){}
+
+        //如果真，说明已加载，直接运行callback即可
+        if(window.dd.loadCSSURL[url] === true){
+            callback();
             return true;
         }
-        if(this.cssName == undefined){
-            this.cssName = false;
-            var _this = this;
-            //加载脚本
+        //console.log(url+"未加载，判断情况")
+        if(window.dd.loadCSSURL[url] == undefined){
+            window.dd.loadCSSURL[url] = false;
+
+            //加载CSS
             var node = document.createElement("link");
-            if(!callback) callback  = function(){}
+
             // IE
             if (node.readyState) {
                 node.onreadystatechange = function () {
                     if (node.readyState == "loaded" || node.readyState == "complete") {
                         node.onreadystatechange = null;
-                        _this.cssName = true;//加载完成
+                        window.dd.loadCSSURL[url] = true;//加载完成
+
                         callback();//回调
+
+                        //调用之前未加载的callback
+                        for(var i in window.dd.loadCSSCallback[url]){
+                            window.dd.loadCSSCallback[url][i]()
+                        }
                     }
                 };
             } else { // others
                 node.onload = function () {
-                    _this.cssName = true;//加载完成
+                    window.dd.loadCSSURL[url] = true;//加载完成
+
                     callback();
+
+                    //调用之前未加载的callback
+                    for(var i in window.dd.loadCSSCallback[url]){
+                        window.dd.loadCSSCallback[url][i]()
+                    }
                 };
             }
+
             node.rel = 'stylesheet';
             node.type = "text/css";
             node.href = url;
-
-            document.body.appendChild(node);
+            document.getElementsByTagName('head')[0].appendChild(node);
+            return undefined;
         }
-        return false;
+
+        //如果到这里，说明前面处于加载中状态
+        //未加载的callback压入数组中待调用
+        window.dd.loadCSSCallback[url] = window.dd.loadCSSCallback[url] || []
+        window.dd.loadCSSCallback[url].push(callback)
+
+        return false; 
     },
+
+
     loadJSX: function(url){
         if(!window.dd.runScripts){
             console.info("如果你想使用utils.loadJSX异步加载jsx文件, 你必须先通过JSXTransform.js暴露window.dd.runScripts方法!");

@@ -1,5 +1,6 @@
 
 var React = require("react");
+var ReactDOM = require('react-dom');
 var MainPage = require("./pages/main/page1.jsx");
 var LoginPage = require("./pages/login/page1.jsx");
 var RegisterPage = require("./pages/register/page1.jsx");
@@ -11,7 +12,7 @@ var Carousal2 = require("./carousel/carousel2");
 
 var SearchBar = require("./searchBar/searchBar1");
 
-var antd = require("../vendors/antd/antd");
+var antd = require("antd");
 
 var PictureWall = require('./picture/pictureWall2');
 
@@ -63,7 +64,7 @@ var ThisPage = React.createClass({
         );
     }
 });
-React.render(<ThisPage />, document.getElementById('content'));
+ReactDOM.render(<ThisPage />, document.getElementById('content'));
 
 /*
 <Login bgImage="../../static/patch/background-size-polyfill-gh-pages/images/algeria.jpg"/>*/

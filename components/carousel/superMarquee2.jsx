@@ -18,7 +18,7 @@ var SuperSlideCarouse2 = React.createClass({
 
 		var self = this;
 
-		Tools.loadScriptAuto("superMarquee",window.dd.vendorsPath+"plugins/superMarquee.js",function(){
+		Tools.loadScript(window.dd.vendorsPath+"plugins/superMarquee.js",function(){
 			console.log(self.props.height)
 
 

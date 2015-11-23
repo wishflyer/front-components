@@ -4,7 +4,7 @@ var $ = require("jQuery");
 var Tools = require("../../utils/tools");
 
 var FullBackgroundImage = require("../util/fullBackgroundImage");
-var antd = require("../../vendors/antd/antd");
+var antd = require("antd");
 
 var Checkbox = antd.Checkbox;
 var Button = antd.Button;
