@@ -4,6 +4,7 @@ require("../vendors/antd/antd.css");
 var components = {
 
 	React : require('react'),
+	ReactDOM : require('react-dom'),
 
 	//page
 	pages : { 
@@ -12,11 +13,15 @@ var components = {
 		} 
 	},
 
+	login : {
+		login1:require("./login/login1.jsx"),
+	},
+
 	//test
-	test : {
+	/*test : {
 		page1 : require("./test/page1"),
 		page2 : require("./test/page2"),
-	},
+	},*/
 
 	tools : require("../utils/tools"),
 	

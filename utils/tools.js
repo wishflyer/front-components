@@ -205,7 +205,6 @@ var Tools = {
         // }
         document.body.appendChild(script);
         $("#page-wrapper").html('<div class="spinner"></div>')
-        window.dd.runScripts();
     },
     goJSX: function(url){
         var RouteConfig = dd.RouteConfig;
@@ -218,14 +217,19 @@ var Tools = {
     handleA: function(key){
         var key = key||"data-tohash";
         $(document).on("click","a",function(){
+
+            console.log("click......")
             if(!$(this).attr(key))
                 return true;
             var href = $(this).attr("href");
+            console.log("href="+href)
             window.location.hash = href;
             var RouteConfig = dd.RouteConfig;
             for(var i in RouteConfig){
                 if(RouteConfig[i].test(href)){
+                    console.log("href="+href)
                     Tools.loadJSX(i);
+                    return;
                 }
             }
             return false;
