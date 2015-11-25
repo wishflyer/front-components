@@ -1,3 +1,23 @@
 /* #marquee2 */
-#marquee2{overflow:hidden;}
-#marquee2 ul li{float:left;border:0;}
+#marquee2{
+	overflow:hidden;
+	border: 1px solid grey;
+}
+#marquee2 ul li{
+	float:left;
+	border:0;
+	border-bottom: 1px solid grey;
+}
+
+#marquee2 .panel-content{
+	padding:8px 10px;
+}
+
+
+#marquee2 .panel-content img{
+	width:80px;
+    height:80px;
+    -webkit-border-radius: 50em;
+    -moz-border-radius: 50em;
+    border-radius: 50em;
+}

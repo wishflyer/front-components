@@ -229,6 +229,7 @@ var Tools = {
                 if(RouteConfig[i].test(href)){
                     console.log("href="+href)
                     Tools.loadJSX(i);
+                    window.dd.runScripts();
                     return;
                 }
             }

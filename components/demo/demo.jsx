@@ -32,13 +32,17 @@ var Header1 = require("../header/header1");
 
 var Login = require("../login/login1");
 
-var PictureWall1 = require('../picture/pictureWall1')
-var PictureWall2 = require('../picture/pictureWall2')
+var PictureWall1 = require('../picture/pictureWall1');
+var PictureWall2 = require('../picture/pictureWall2');
 
 
-var Register1 = require('../register/register1')
+var Register1 = require('../register/register1');
 
-var SearchBar1 = require('../searchBar/searchBar1')
+var SearchBar1 = require('../searchBar/searchBar1');
+
+var AddressSelect = require('../util/addressSelect');
+var YearMonthDay = require('../util/YearMonthDay');
+
 
 //ECharts
 var data = [
@@ -70,13 +74,17 @@ var Demo = React.createClass({
 					<AdBar1 bgColor="grey"><img src='../../static/image/1.jpg' /></AdBar1>
 			    </TabPane>
 			    <TabPane tab="carousel" key="2">
-			    	<SuperMarquee2/>
-			    	<Carousel1/>
-			    	<Carousel2/>
-			    	<SuperSlideCarousel219/>
-			    	<SuperSlideCarousel215/>
-			    	<SuperSlideCarousel226/>
-			    	<SuperSlideCarousel204/>
+			    	<div className="col-8">
+			    		<SuperMarquee2/>
+			    	</div>
+			    	<div className="col-24">
+				    	<Carousel1/>
+				    	<Carousel2/>
+				    	<SuperSlideCarousel219/>
+				    	<SuperSlideCarousel215/>
+				    	<SuperSlideCarousel226/>
+				    	<SuperSlideCarousel204/>
+				    </div>
 			    </TabPane>
 			    <TabPane tab="ECharts" key="3">
 			    	<div className="col-8">
@@ -134,6 +142,12 @@ var Demo = React.createClass({
 			    <TabPane tab="Register" key="8">
 			    	<Register1/>
 				</TabPane>
+			    <TabPane tab="util" key="9">
+			    	<AddressSelect/>
+			    	<YearMonthDay/>
+				</TabPane>
+
+
 			</Tabs>
 
 			</div>

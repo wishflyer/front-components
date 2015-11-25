@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ECharts 图表组件
  * @module ECharts
  * @author czdujianbin 2015-09-22
@@ -38,7 +38,7 @@ var AbstractECharts = {
     },
 
     loadChart: function(option){
-        console.log("id:"+this.state.id)
+        
         var myChart = echarts.init(document.getElementById(this.state.id),this.props.theme);
 
         this.state.chart = myChart;
