@@ -1,5 +1,5 @@
 
-require("../vendors/antd/antd.css");
+require("../static/vendors/antd/antd.css");
 
 var components = {
 

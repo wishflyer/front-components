@@ -12,7 +12,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'dd.js',
-        publicPath: '/static/',
+        publicPath: '/onlineStatic/',
         library: 'components', //https://webpack.github.io/docs/library-and-externals.html
         libraryTarget: 'umd2'
     },

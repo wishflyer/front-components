@@ -20,6 +20,6 @@ window.dd.RouteConfig = {
 
 //配置路由信息
 
-window.dd.vendorsPath = "./vendors/"
+window.dd.vendorsPath = "./static/vendors/"
 
 console.log("config load....");

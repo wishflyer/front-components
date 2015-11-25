@@ -1,10 +1,12 @@
 {
-  "name": "React-Components",
+  "name": "dd-components",
   "version": "0.1.1",
   "description": "my front components",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "project": "node server.project.js",
+    "start": "node server.components.js",
+    "online": "node server.components.release.online.js",
     "release": "webpack --config webpack.config.min.js"
   },
   "author": "",

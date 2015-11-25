@@ -25,7 +25,7 @@ var SuperSlideCarousel219 = require("./carousel/superSlideCarousel2.19");
 var SuperSlideCarousel226 = require("./carousel/superSlideCarousel2.26");
 var SuperSlideCarousel204 = require("./carousel/superSlideCarousel2.4");
 
-require("../vendors/antd/antd.css");
+require("../static/vendors/antd/antd.css");
 
 var PictureWallImages = 
                    [{src:"../../../static/image/girls/girl0.jpg",url:"http://www.baidu.com",name:"程思思",age:22,height:"160cm",description:"愿得一人心，白首不分离"}
@@ -43,7 +43,6 @@ var PictureWallImages =
 
 
                 
-
                
 
 var ThisPage = React.createClass({

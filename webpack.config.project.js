@@ -5,15 +5,15 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: [
-      'webpack-dev-server/client?http://localhost:3000',
+      'webpack-dev-server/client?http://localhost:3001',
       'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-      './components/index.jsx' // Your appʼs entry point
+      './static/project/love/index.jsx' // Your appʼs entry point
     ],
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'dd.js',
         publicPath: '/onlineStatic/',
-        library: 'components', //https://webpack.github.io/docs/library-and-externals.html
+        library: 'project', //https://webpack.github.io/docs/library-and-externals.html
         libraryTarget: 'umd2'
     },
     externals: {
@@ -23,7 +23,7 @@ module.exports = {
         //   commonjs: 'react',
         //   amd: 'react'
         // },
-        'components':'components',
+        'project':'project',
         'jquery': {
           root: 'jQuery',
           commonjs2: 'jquery',
@@ -38,14 +38,14 @@ module.exports = {
                 test: /\.jsx$/,
                 exclude: /node_modules/,
                 //exclude: path.join(__dirname, 'node_modules'),
-                include: path.join(__dirname, 'components'),
+                include: path.join(__dirname, 'static/project/'),
                 loader: 'react-hot!babel-loader'
             },
             {
                 test: /\.js$/,
                 //exclude: /node_modules/,
                 //exclude: path.join(__dirname, 'node_modules'),
-                include: path.join(__dirname, 'components'),
+                include: path.join(__dirname, 'static/project/'),
                 loader: 'react-hot!babel-loader'
             },
             {

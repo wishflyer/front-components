@@ -227,7 +227,7 @@ var Tools = {
             var RouteConfig = dd.RouteConfig;
             for(var i in RouteConfig){
                 if(RouteConfig[i].test(href)){
-                    console.log("href="+href)
+                    console.log("load href="+href)
                     Tools.loadJSX(i);
                     window.dd.runScripts();
                     return;

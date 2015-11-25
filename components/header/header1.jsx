@@ -44,7 +44,7 @@ var Header1 = React.createClass({
 					      <Menu.Item key="setting:4">选项4</Menu.Item>
 					    </SubMenu>
 					    <Menu.Item key="alipay">
-					      <button className="ant-btn ant-btn-primary">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+					      <a href="/main" data-tohash className="ant-btn ant-btn-primary">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
 					    </Menu.Item>
 
 					</Menu>
