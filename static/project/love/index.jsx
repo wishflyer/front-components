@@ -7,17 +7,20 @@ window.ddcomponents = components;
 
 var Page = components.pages.main.page1;
 
-var MainPage = React.createClass({
+var IndexPage = React.createClass({
 
     render: function(){
 
         return(
         <div>
-        	<a href="/main">gotoMain</a>
-            <Page/>
+        	This is the index.jsx file.
+        	<a href="/main" data-tohash>goto main.jsx</a>
+            
         </div>);
     }
 });
 
-ReactDOM.render(<MainPage />, document.getElementById('content'));
+ReactDOM.render(<IndexPage />, document.getElementById('content'));
 
+
+/*<Page/>*/

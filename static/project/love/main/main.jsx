@@ -8,7 +8,8 @@ var MainPage = React.createClass({
     render: function(){
 
         return(<div>
-           	This is the main page
+           	This is the main.jsx file.
+			<a href="/index" data-tohash>click to index.jsx</a>
         </div>);
     }
 });

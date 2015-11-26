@@ -175,62 +175,52 @@ var Tools = {
         var scripts = document.getElementsByTagName('script');
         for (var i = 0; i < scripts.length; i++) {
             if (/^text\/jsx(;|$)/.test(scripts.item(i).type)&&scripts.item(i).src.indexOf("?only")!=-1) {
+                console.log("remove script:"+scripts.item(i).src)
                 document.body.removeChild(scripts.item(i));
             }
         }
-        //删除head中最后一个scrpit标签
+        //删除head中scrpit标签
         var scripts = document.head.getElementsByTagName('script');
-        for (var i = 0; i < scripts.length; i++) {
-            document.head.removeChild(scripts[i]);
+        Debug.log("all script:",scripts)
+        var length = scripts.length;
+        for (var i = 0; i < length; i++) {
+            console.log("删除scrpit标签:"+scripts[0].src)
+            document.head.removeChild(scripts[0]);
         }
 
         var script = document.createElement("script");
         script.type = "text/jsx";
         script.src = url+"?only";
-        // // 加载完成后调用runScript
-        // if (script.readyState) { //IE
-        //     script.onreadystatechange = function () {
-        //         if (script.readyState == "loaded" || script.readyState == "complete") {
-        //             script.onreadystatechange = null;
-        //             _this.scriptName = true;//加载完成
-        //             window.dd.runScripts();//回调
-        //         }
-        //     };
-        // } else { // others
-        //     script.onload = function () {
-        //         _this.scriptName = true;//加载完成
-        //         console.log("called") //called
-        //         window.dd.runScripts();
-        //     };
-        // }
+
+        console.log("add scrpit标签:"+script.src)
         document.body.appendChild(script);
-        $("#page-wrapper").html('<div class="spinner"></div>')
+
     },
     goJSX: function(url){
         var RouteConfig = dd.RouteConfig;
         for(var i in RouteConfig){
             if(RouteConfig[i].test(url)){
+                    console.log("in goJSX...loadJSX");
                 this.loadJSX(i);
             }
         }
     },
     handleA: function(key){
         var key = key||"data-tohash";
+        $(document).off("click","a");
         $(document).on("click","a",function(){
-
-            console.log("click......")
             if(!$(this).attr(key))
                 return true;
             var href = $(this).attr("href");
-            console.log("href="+href)
             window.location.hash = href;
             var RouteConfig = dd.RouteConfig;
             for(var i in RouteConfig){
+                RouteConfig[i] = new RegExp(RouteConfig[i]);
                 if(RouteConfig[i].test(href)){
-                    console.log("load href="+href)
+                    console.log("in handleA...loadJSX");
                     Tools.loadJSX(i);
                     window.dd.runScripts();
-                    return;
+                    return false;
                 }
             }
             return false;
