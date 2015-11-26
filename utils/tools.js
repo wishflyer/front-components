@@ -87,7 +87,7 @@ var Tools = {
             if(rgJS.test(url))
                 script.type = "text/javascript";
             if(rgJSX.test(url))
-                script.type = "text/jsx";
+                script.type = "text/babel";
 
             script.src = url;
             document.body.appendChild(script);
@@ -174,25 +174,25 @@ var Tools = {
         //先删除其他无用的jsx
         var scripts = document.getElementsByTagName('script');
         for (var i = 0; i < scripts.length; i++) {
-            if (/^text\/jsx(;|$)/.test(scripts.item(i).type)&&scripts.item(i).src.indexOf("?only")!=-1) {
-                console.log("remove script:"+scripts.item(i).src)
+            //if (/^text\/jsx(;|$)/.test(scripts.item(i).type)&&scripts.item(i).src.indexOf("?only")!=-1) {
+            if (/^text\/babel(;|$)/.test(scripts.item(i).type)&&scripts.item(i).src.indexOf("?only")!=-1) {
+                //console.log("remove script:"+scripts.item(i).src)
                 document.body.removeChild(scripts.item(i));
             }
         }
         //删除head中scrpit标签
-        var scripts = document.head.getElementsByTagName('script');
-        Debug.log("all script:",scripts)
+        /*var scripts = document.head.getElementsByTagName('script');
         var length = scripts.length;
         for (var i = 0; i < length; i++) {
-            console.log("删除scrpit标签:"+scripts[0].src)
+            //console.log("删除scrpit标签:"+scripts[0].src)
             document.head.removeChild(scripts[0]);
-        }
+        }*/
 
         var script = document.createElement("script");
-        script.type = "text/jsx";
+        script.type = "text/babel";
         script.src = url+"?only";
 
-        console.log("add scrpit标签:"+script.src)
+        //console.log("add scrpit标签:"+script.src)
         document.body.appendChild(script);
 
     },
@@ -200,7 +200,7 @@ var Tools = {
         var RouteConfig = dd.RouteConfig;
         for(var i in RouteConfig){
             if(RouteConfig[i].test(url)){
-                    console.log("in goJSX...loadJSX");
+                console.log("in goJSX...loadJSX");
                 this.loadJSX(i);
             }
         }
@@ -217,7 +217,7 @@ var Tools = {
             for(var i in RouteConfig){
                 RouteConfig[i] = new RegExp(RouteConfig[i]);
                 if(RouteConfig[i].test(href)){
-                    console.log("in handleA...loadJSX");
+                    //console.log("in handleA...loadJSX");
                     Tools.loadJSX(i);
                     window.dd.runScripts();
                     return false;
