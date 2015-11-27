@@ -43,6 +43,9 @@ var SearchBar1 = require('../searchBar/searchBar1');
 var AddressSelect = require('../util/addressSelect');
 var YearMonthDay = require('../util/YearMonthDay');
 
+var Tabs1 = require("../tabs/tabs1");
+
+var Editor1 = require("../editor/trumbowyg");
 
 //ECharts
 var data = [
@@ -69,7 +72,7 @@ var Demo = React.createClass({
 		return (
 			<div>
 
-			<Tabs defaultActiveKey="2">
+			<Tabs defaultActiveKey="10">
 			    <TabPane tab="ad" key="1">
 					<AdBar1 bgColor="grey"><img src='../../static/image/1.jpg' /></AdBar1>
 			    </TabPane>
@@ -142,7 +145,17 @@ var Demo = React.createClass({
 			    <TabPane tab="Register" key="8">
 			    	<Register1/>
 				</TabPane>
-			    <TabPane tab="util" key="9">
+
+			    <TabPane tab="Tabs" key="9">
+			    	<Tabs1/>
+				</TabPane>
+
+
+			    <TabPane tab="Editor" key="10">
+			    	<Editor1/>
+				</TabPane>
+
+			    <TabPane tab="util" key="11">
 			    	<AddressSelect/>
 			    	<YearMonthDay/>
 				</TabPane>
