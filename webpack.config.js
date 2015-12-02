@@ -7,7 +7,7 @@ module.exports = {
     entry: [
       'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-      './components/index.jsx' // Your appʼs entry point
+      './components/index2.jsx' // Your appʼs entry point
     ],
     output: {
         path: path.join(__dirname, 'dist'),
