@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+  
+  
+#picture_box1 {
+	
+	overflow:hidden;
+	border: 1px solid #dbdad8;
+}
+#picture_box1 img {
+	border: 1px solid #F2F2F2;
+}
+#picture_box1_1 {
+	float: left;
+}
+#picture_box1_2 {
+	float: left;
+}
+
+
+#picture_box2 {
+	
+	overflow:hidden;
+	border: 1px solid #dbdad8;
+}
+#picture_box2 img {
+	border: 1px solid #F2F2F2;
+}
+#picture_box2_1 {
+	float: left;
+}
+#picture_box2_2 {
+	float: left;
+}
+
+#inpicture_box {
+	float: left;
+	width: 800%;
+}
