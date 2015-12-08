@@ -27,7 +27,7 @@ var ThisPage = React.createClass({
     }
 });
 ReactDOM.render(<ThisPage />, document.getElementById('react-content'));
-
+/*
 
 import React from 'react';
 import Datepicker from 'antd/lib/datepicker';
@@ -38,4 +38,4 @@ const App = React.createClass({
   },
 });
 
-export default App;
+export default App;*/

@@ -1,3 +1,6 @@
+
+//console.log("load JSXTransformer.js start");
+
 /**
  * JSXTransformer v0.13.0
  */
@@ -292,7 +295,7 @@ function loadScripts(scripts) {
 }
 
 /**
- * Find and run all script tags with type="text/jsx".
+ * Find and run all script tags with type="text/jsx".  ->>add by dujb : text/babel
  *
  * @internal
  */
@@ -303,6 +306,8 @@ function runScripts() {
   var jsxScripts = [];
   for (var i = 0; i < scripts.length; i++) {
     if (/^text\/jsx(;|$)/.test(scripts.item(i).type)) {
+      jsxScripts.push(scripts.item(i));
+    }else if (/^text\/babel(;|$)/.test(scripts.item(i).type)) {
       jsxScripts.push(scripts.item(i));
     }
   }
@@ -15926,3 +15931,5 @@ module.exports = inlineSourceMap;
 
 },{"buffer":3}]},{},[1])(1)
 });
+
+//console.log("load JSXTransformer.js end");

@@ -11,6 +11,7 @@ var Base = React.createClass({
 	render: function(){
 
 		return(<div>
+			123
 		</div>)
 	}
 });

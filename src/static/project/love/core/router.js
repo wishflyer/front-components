@@ -10,6 +10,7 @@ if(window.location.pathname == "/login" || window.location.hash == '#/login'){
     console.log("load base.jsx")
 	//加载基本框架
 	Tools.loadScript("./src/static/project/love/core/base.jsx");
+
 	console.log("window.location.hash:"+window.location.hash)
 	//根据URL加载不同业务页面
 	Tools.goJSX(window.location.hash);
