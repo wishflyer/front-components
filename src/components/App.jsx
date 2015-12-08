@@ -1,10 +1,30 @@
-import React from 'react';
-import Datepicker from 'antd/lib/datepicker';
+require("../static/vendors/antd/antd.css");
 
-const App = React.createClass({
-  render() {
-    return <Datepicker />;
-  },
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var WebsocketSample = require('./websocket/websocketSample');
+
+
+
+var ThisPage = React.createClass({
+
+
+
+    render: function(){
+
+        var DemoCss = {
+          "margin": "auto",
+          "width":"80%"
+        }
+
+        return(
+            <div style={DemoCss}>
+                <WebsocketSample/>
+            </div>
+        );
+    }
 });
-
-export default App;
+//ReactDOM.render(<ThisPage />, document.getElementById('react-content'));
+//
+module.exports = ThisPage;

@@ -20,6 +20,9 @@ window.dd.RouteConfig = {
 
 //配置路由信息
 
-window.dd.vendorsPath = "./src/static/vendors/"
+window.dd.vendorsPath = "./src/static/vendors/";
+
+
+window.dd.wsServer = "http://127.0.0.1:8888";
 
 console.log("config load....");

@@ -11,4 +11,6 @@ window.dd.RouteConfig = {
 window.dd.debugMode = true;
 window.dd.vendorsPath = "./src/static/vendors/";
 
-console.log("loading config.js");
+window.dd.wsServer = "http://127.0.0.1:8888";
+
+console.log("loading config.js in love");

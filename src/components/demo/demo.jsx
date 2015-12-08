@@ -47,6 +47,9 @@ var Tabs1 = require("../tabs/tabs1");
 
 var Editor1 = require("../editor/trumbowyg");
 
+
+var Uploader = require("../uploader/webuploader");
+
 //ECharts
 var data = [
       {
@@ -72,7 +75,7 @@ var Demo = React.createClass({
 		return (
 			<div>
 
-			<Tabs defaultActiveKey="10">
+			<Tabs defaultActiveKey="11">
 			    <TabPane tab="ad" key="1">
 					<AdBar1 bgColor="grey"><img src='../../src/static/image/1.jpg' /></AdBar1>
 			    </TabPane>
@@ -149,13 +152,13 @@ var Demo = React.createClass({
 			    <TabPane tab="Tabs" key="9">
 			    	<Tabs1/>
 				</TabPane>
-
-
 			    <TabPane tab="Editor" key="10">
 			    	<Editor1/>
 				</TabPane>
-
-			    <TabPane tab="util" key="11">
+				 <TabPane tab="Uploader" key="11">
+					<Uploader/>
+				</TabPane>
+			    <TabPane tab="util" key="12">
 			    	<AddressSelect/>
 			    	<YearMonthDay/>
 				</TabPane>
