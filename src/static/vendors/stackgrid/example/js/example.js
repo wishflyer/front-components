@@ -43,6 +43,7 @@
             $(n).click(this.removeItem)
         /*n.addEventListener("click", this.removeItem)*/
     },
+    window.uu = o.update,
     o.removeItem = function() {
         jQuery.Velocity(this, {
             scale: 0

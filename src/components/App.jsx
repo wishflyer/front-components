@@ -3,9 +3,10 @@ require("../static/vendors/antd/antd.css");
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var WebsocketSample = require('./websocket/websocketSample');
+var WebsocketSample = require('./websocket/test');
 
 
+var Panel = require('./panel/panel1');
 
 var ThisPage = React.createClass({
 
@@ -20,7 +21,7 @@ var ThisPage = React.createClass({
 
         return(
             <div style={DemoCss}>
-                <WebsocketSample/>
+                <Panel/>
             </div>
         );
     }

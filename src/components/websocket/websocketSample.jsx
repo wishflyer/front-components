@@ -4,8 +4,8 @@ var Tools = require('../../utils/tools');
 
 var WebsocketSample = React.createClass({
 
-		componentDidMount: function() {
-		
+	componentDidMount: function() {
+	
         Tools.loadScript(window.dd.vendorsPath+"sockjs/sockjs.min.js",function(){
         
 
