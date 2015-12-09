@@ -8,6 +8,10 @@ var WebsocketSample = require('./websocket/test');
 
 var Panel = require('./panel/panel1');
 
+var Star = require('./util/star');
+
+var List = require('./util/list');
+
 var ThisPage = React.createClass({
 
 
@@ -21,9 +25,17 @@ var ThisPage = React.createClass({
 
         return(
             <div style={DemoCss}>
-                <Panel/>
+                <Star/>
+                <Star curvalue="3"/>
+                <Star type="basic"/>
+                <Star type="basic" curvalue="3"/>
+                <List/>
+
+                <List justify={true}/>
             </div>
-        );
+
+        )
+
     }
 });
 //ReactDOM.render(<ThisPage />, document.getElementById('react-content'));

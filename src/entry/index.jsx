@@ -7,4 +7,4 @@ import App from '../components/App';
 import Demo from '../components/demo/demo';
 
 
-ReactDOM.render(<App />, document.getElementById('react-content'));
+ReactDOM.render(<Demo />, document.getElementById('react-content'));

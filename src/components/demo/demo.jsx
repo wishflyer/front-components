@@ -50,6 +50,14 @@ var Editor1 = require("../editor/trumbowyg");
 
 var Uploader = require("../uploader/webuploader");
 
+var List = require('../util/list');
+var Star = require('../util/star')
+
+//modules
+var Info1 = require('../pages/modules/Info1');
+
+var listData = {"学历":"本科","收入":"10000","性别":"男","户口":"北京户口","是否吸烟":"否","是否喝酒":"否"}
+
 //ECharts
 var data = [
       {
@@ -75,7 +83,7 @@ var Demo = React.createClass({
 		return (
 			<div>
 
-			<Tabs defaultActiveKey="11">
+			<Tabs defaultActiveKey="13">
 			    <TabPane tab="ad" key="1">
 					<AdBar1 bgColor="grey"><img src='../../src/static/image/1.jpg' /></AdBar1>
 			    </TabPane>
@@ -161,8 +169,17 @@ var Demo = React.createClass({
 			    <TabPane tab="util" key="12">
 			    	<AddressSelect/>
 			    	<YearMonthDay/>
+			    	
+	                <Star/>
+	                <Star curvalue="3"/>
+	                <Star type="basic"/>
+	                <Star type="basic" curvalue="3"/>
+	                <List data={listData} justify={true}/>
 				</TabPane>
 
+				 <TabPane tab="Modules" key="13">
+					<Info1/>
+				</TabPane>
 
 			</Tabs>
 
