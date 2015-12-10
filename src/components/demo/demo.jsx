@@ -53,6 +53,8 @@ var Uploader = require("../uploader/webuploader");
 var List = require('../util/list');
 var Star = require('../util/star')
 
+var Layer = require('../modal/layer');
+
 //modules
 var Info1 = require('../pages/modules/Info1');
 
@@ -83,7 +85,7 @@ var Demo = React.createClass({
 		return (
 			<div>
 
-			<Tabs defaultActiveKey="13">
+			<Tabs defaultActiveKey="14">
 			    <TabPane tab="ad" key="1">
 					<AdBar1 bgColor="grey"><img src='../../src/static/image/1.jpg' /></AdBar1>
 			    </TabPane>
@@ -179,6 +181,10 @@ var Demo = React.createClass({
 
 				 <TabPane tab="Modules" key="13">
 					<Info1/>
+				</TabPane>
+
+				 <TabPane tab="Modal" key="14">
+	                <Layer/>
 				</TabPane>
 
 			</Tabs>
