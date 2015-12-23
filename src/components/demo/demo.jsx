@@ -55,8 +55,11 @@ var Star = require('../util/star')
 
 var Layer = require('../modal/layer');
 
+
+var Table = require('../table/bsgrid');
+
 //modules
-var Info1 = require('../pages/modules/Info1');
+var Info1 = require('../pages/modules/info1');
 
 var listData = {"学历":"本科","收入":"10000","性别":"男","户口":"北京户口","是否吸烟":"否","是否喝酒":"否"}
 
@@ -78,6 +81,35 @@ var xAxisName = ['周一','周二','周三','周四','周五','周六','周日']
 
 
 
+var tableLocalData = [
+    {
+        "ID": 202,
+        "CHAR": "1",
+        "TEXT": "TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_1",
+        "NUM": 11.2,
+        "XH": 1
+    },
+    {
+        "ID": 201,
+        "CHAR": "111",
+        "TEXT": "TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_TEXT_2",
+        "XH": 2
+    }
+]
+
+var tableConfig = {
+        localData: tableLocalData,
+        // autoLoad: false,
+        pageSizeSelect: true,
+        pageSize: 10,
+        rowHoverColor: true,
+        extend: {
+            settings: {
+                supportColumnMove: true // if support extend column move, default false
+            }
+        }
+    }
+
 
 var Demo = React.createClass({
 
@@ -85,7 +117,7 @@ var Demo = React.createClass({
 		return (
 			<div>
 
-			<Tabs defaultActiveKey="14">
+			<Tabs defaultActiveKey="15">
 			    <TabPane tab="ad" key="1">
 					<AdBar1 bgColor="grey"><img src='../../src/static/image/1.jpg' /></AdBar1>
 			    </TabPane>
@@ -185,6 +217,10 @@ var Demo = React.createClass({
 
 				 <TabPane tab="Modal" key="14">
 	                <Layer/>
+				</TabPane>
+
+				 <TabPane tab="Table" key="15">
+	                <Table config={tableConfig}/>
 				</TabPane>
 
 			</Tabs>
