@@ -77,9 +77,10 @@ var SuperMarquee2 = React.createClass({
 		var content = [];
 		var data = this.props.data;
 		for (var elem in data) {
-			console.log("elem:"+elem+"  data[elem]:"+data[elem]);
-		  	content.push(<li><div className="panel-div"><div className="panel-content">{data[elem]}</div></div></li>);
+			console.log("elem:"+elem+"  data[elem]:"+data[elem].imgSrc);
+		  	content.push(<li><div className="panel-div"><div className="panel-content">{data[elem].description}</div></div></li>);
 		}
+
 
 
 		return (
@@ -88,8 +89,8 @@ var SuperMarquee2 = React.createClass({
 				<div id="marquee2">
 					<ul>
 						{
-							content.map(function(index, elem) {
-								return content[elem];
+							content.map(function(elem,index) {
+								return content[index];
 							})
 						}
 					</ul>

@@ -117,7 +117,7 @@ var Demo = React.createClass({
 		return (
 			<div>
 
-			<Tabs defaultActiveKey="15">
+			<Tabs defaultActiveKey="2">
 			    <TabPane tab="ad" key="1">
 					<AdBar1 bgColor="grey"><img src='../../src/static/image/1.jpg' /></AdBar1>
 			    </TabPane>
