@@ -1,13 +1,19 @@
+console.log(">>>>require SuperSlideCarousel js....");
 var React = require('react');
 var Tools = require('../../utils/tools');
 var $ = require('jquery')
+
+
 
 require('../../static/css/components/carousel/superSlideCarousel2.15.css');
 
 var SuperSlideCarousel = React.createClass({
 
 	componentDidMount: function() {
+
+		/*Tools.loadScript(window.dd.vendorsPath+"superSlide/jquery.SuperSlide.js",new function(){alert("OMG.......")});*/
 		Tools.loadScript(window.dd.vendorsPath+"superSlide/jquery.SuperSlide.js",function(){
+
 			/*鼠标移过，左右按钮显示*/
 			window.$(".superSlide .focusBox").hover(function(){ $(this).find(".prev,.next").stop(true,true).fadeTo("show",0.2) },function(){ $(this).find(".prev,.next").fadeOut() });
 			/*SuperSlide图片切换*/
@@ -17,6 +23,7 @@ var SuperSlideCarousel = React.createClass({
 	},
 
 	render: function() {
+		console.log(">>>>SuperSlideCarousel render ....");
 		return (
 			<div className="superSlide">
 				<div className="focusBox" style={{"margin":"0 auto"}}>

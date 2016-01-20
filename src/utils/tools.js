@@ -39,7 +39,7 @@ var Tools = {
         window.dd.loadScriptCallback = window.dd.loadScriptCallback || {}
         window.dd.loadScriptURL = window.dd.loadScriptURL || {}
 
-        if(!callback) callback  = function(){}
+        //if(!callback) {callback  = function(){}}  //<--加上这一句不知道为什么在IE8下，不论callback有没有值都会给赋一个function(){}
 
         //如果真，说明已加载，直接运行callback即可
         if(window.dd.loadScriptURL[url] === true){
@@ -55,13 +55,16 @@ var Tools = {
             // IE
             if (script.readyState) {
                 script.onreadystatechange = function () {
+
                     if (script.readyState == "loaded" || script.readyState == "complete") {
                         script.onreadystatechange = null;
                         window.dd.loadScriptURL[url] = true;//加载完成
+
                         callback();//回调
 
                         //调用之前未加载的callback
                         for(var i in window.dd.loadScriptCallback[url]){
+
                             window.dd.loadScriptCallback[url][i]()
                         }
 

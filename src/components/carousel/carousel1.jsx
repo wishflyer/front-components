@@ -6,6 +6,10 @@ var antd = require("antd");
 var Carousel = antd.Carousel;
 
 var Carousel1 = React.createClass({
+	componentDidMount: function() {
+		
+		console.log(">>>>Carousel1 loaded....");
+	},
 
 	getDefaultProps: function() {
 		return {

@@ -1,23 +1,25 @@
 {
   "name": "front-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "entry": {
     "dd": "./src/entry/index.jsx"
   },
   "dependencies": {
-    "antd": "0.10.x",
-    "antd-build": "0.4.x",
-    "less": "2.x",
+    "antd": "0.11.x",
+    "atool-build": "0.4.x",
+    "babel-plugin-antd": "^0.1.2",
+    "es3ify-loader": "^0.1.0",
     "react": "~0.14.3",
     "react-dom": "~0.14.3"
   },
   "devDependencies": {
-    "antd-bin": "0.10.x",
-    "babel-eslint": "~4.0.5",
-    "eslint": "~1.6.0",
-    "eslint-config-airbnb": "~0.1.0",
-    "eslint-plugin-react": "~3.5.1",
-    "expect.js": "~0.3.1",
+    "dora": "0.2.x",
+    "dora-plugin-atool-build": "0.4.x",
+    "dora-plugin-hmr": "0.3.x",
+    "dora-plugin-proxy": "0.5.x",
+    "eslint": "~1.10.3",
+    "eslint-config-airbnb": "~2.1.0",
+    "eslint-plugin-react": "~3.11.3",
     "pre-commit": "1.x"
   },
   "pre-commit": [
@@ -25,11 +27,10 @@
   ],
   "scripts": {
     "start": "npm run dev",
-    "dev": "antd server --port 3000",
-    "project": "antd project --port 3001",
-    "online": "antd online --port 3000",
-    "test": "antd test",
+    "dev": "dora -p 3000 --plugins atool-build?{config:'webpack.config.dev.js'},proxy,hmr",
+    "online": "dora -p 3000 --plugins atool-build?{config:'webpack.config.release.online.js'},proxy,hmr",
+    "project": "dora -p 3001 --plugins atool-build?{config:'webpack.config.project.js'},proxy,hmr",
     "lint": "eslint --ext .js,.jsx src",
-    "build": "rm -rf dist && antd-build && mkdir -p dist/${npm_package_name}/${npm_package_version} && mv dist/*.* dist/${npm_package_name}/${npm_package_version}/"
+    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name/{npm_package_version}"
   }
 }

@@ -12,6 +12,10 @@ import Demo from './demo/demo';
 
 var ThisPage = React.createClass({
 
+    componentDidMount: function() {
+      console.log("index.jsx load completed!!!")
+    },
+
     render: function(){
 
         var DemoCss = {

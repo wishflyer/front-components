@@ -2,22 +2,21 @@ require("../static/vendors/antd/antd.css");
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Tools = require('../utils/tools.js');
 
-var WebsocketSample = require('./websocket/test');
+/*
 
 
 var Panel = require('./panel/panel1');
 
-var Star = require('./util/star');
-
-var List = require('./util/list');
-
-var Info2 = require('./pages/modules/info2');
-var List1 = require('./pages/modules/list1');
-
-var Table = require('./table/bsgrid');
+var Info2 = require('./pages/modules/info2')
 
 
+;*/
+/*
+
+
+*/
 
 var localData = [
     {
@@ -35,7 +34,7 @@ var localData = [
     }
 ]
 
-var config = {
+var tableConfig = {
         localData: localData,
         // autoLoad: false,
         pageSizeSelect: true,
@@ -50,7 +49,16 @@ var config = {
 
 var ThisPage = React.createClass({
 
+    testFunction:function(a){
+        alert(a)
+        a()
+    },
 
+    componentDidMount: function() {
+      console.log("app.jsx load completed!!!");
+      Tools.loadScript(window.dd.vendorsPath+"superSlide/jquery.SuperSlide.js",function(){alert("OMG.......")});
+      this.testFunction(function(){alert('test')});
+    },
 
     render: function(){
 
@@ -62,7 +70,8 @@ var ThisPage = React.createClass({
         return(
             <div style={DemoCss}>
 
-                <Table config={config}/>
+                
+                   123
 
 
             </div>

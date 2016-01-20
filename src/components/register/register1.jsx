@@ -12,7 +12,7 @@ var Option = Select.Option;
 var Radio = antd.Radio;
 var RadioGroup = antd.Radio.Group;
 var Button = antd.Button;
-var Datepicker = antd.Datepicker;
+var DatePicker = antd.DatePicker ;
 var InputNumber = antd.InputNumber;
 
 function cx(classNames) {
@@ -327,7 +327,7 @@ var Register = React.createClass({
                   type: 'date',
                   message: '你的生日是什么呢?'
                 }, {validator: this.checkBirthday}]}>
-                  <Datepicker name="birthday" value={formData.birthday}></Datepicker>
+                  <DatePicker name="birthday" value={formData.birthday}></DatePicker>
                 </Validator>
                 {status.birthday.errors ? <div className="ant-form-explain"> {status.birthday.errors.join(', ')}</div> : null}
               </div>

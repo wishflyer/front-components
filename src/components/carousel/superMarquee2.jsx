@@ -30,8 +30,8 @@ var SuperMarquee2 = React.createClass({
 		var self = this;
 
 		Tools.loadScript(window.dd.vendorsPath+"plugins/superMarquee.js",function(){
-			console.log(self.props.height)
 
+			console.log(self.props.height)
 
 			if(self.props.width == 0){//自适应
 				//console.log($(".superMarquee").width()+"px")
