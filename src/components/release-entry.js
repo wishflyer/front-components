@@ -1,7 +1,7 @@
 
 require("../static/vendors/antd/antd.css");
 
-var components = {
+var Components = {
 
 	React : require('react'),
 	ReactDOM : require('react-dom'),
@@ -59,4 +59,4 @@ var components = {
 // 	return this[key];
 // }    
 
-module.exports = components;
+module.exports = Components;

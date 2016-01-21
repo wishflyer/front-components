@@ -1,7 +1,7 @@
 var React = require('react');
 var Tools = require("../../utils/tools");
 
-var $ = require('jquery');
+var $ = require('jquery') || window.$;
 
 require("../../static/css/components/picture/pictureWall1.css");
 

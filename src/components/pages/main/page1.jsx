@@ -10,6 +10,8 @@ var PictureWall = require("../../picture/pictureWall1");
 var AdBar = require("../../ad/adBar1");
 
 
+require("../../../static/css/components/pages/main/page1.css");
+
 var PictureWallImages = 
                    [{src:"../../../src/static/image/girls/girl0.jpg",url:"http://www.baidu.com",description:"22岁 160cm 活泼奔放"}
                    ,{src:"../../../src/static/image/girls/girl1.jpg",url:"http://www.google.com",description:"我是个美丽的女孩，期望遇到真命天子，是你吗"}
@@ -70,7 +72,7 @@ var MainPage = React.createClass({
         		    <AdBar bgColor="white"><img src='../../../src/static/image/ad/bar4.png' /></AdBar>
                 <PictureWall pictureNumInLine={12} closeInfo={true} images={PictureWallImages} imgIncrease={50}/>
                 <AdBar bgColor="#ff5f89"><img src='../../../src/static/image/ad/bar1.jpg' /></AdBar>
-                <AdBar bgColor="white" margin="20px auto"><p>Copyright@2015.缘定潮汕 All rights reserved.</p></AdBar>
+                <AdBar bgColor="#2E2727" margin="20px auto" fontColor="white" fontSize="15px"><p>Copyright@2015.缘定潮汕 All rights reserved.</p></AdBar>
 
         	</div>
         );

@@ -12,12 +12,14 @@ var AdBar = React.createClass({
 			bgColor : "white",
 			margin : "auto auto",
 			align : "center",
+			fontSize: "0px",
+			fontColor:"#2E2727"
 		};
 	},
 
 	render: function() {
 		return (
-			<div className="row-flex row-flex-center" style={{"backgroundColor":this.props.bgColor,"fontSize":"0px"}} >
+			<div className="row-flex row-flex-center" style={{"backgroundColor":this.props.bgColor,"fontSize":this.props.fontSize,"color":this.props.fontColor}} >
 				<div id="adBar1" style={{"margin":this.props.margin,"textAlign":this.props.align}}>
 					{this.props.children}
 				</div>

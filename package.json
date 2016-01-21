@@ -27,8 +27,8 @@
   ],
   "scripts": {
     "start": "npm run dev",
-    "dev": "dora -p 3000 --plugins atool-build?{config:'webpack.config.dev.js'},proxy,hmr",
-    "online": "dora -p 3000 --plugins atool-build?{config:'webpack.config.release.online.js'},proxy,hmr",
+    "dev": "dora -p 3002 --plugins atool-build?{config:'webpack.config.dev.js'},proxy?{port:6666},hmr",
+    "online": "dora -p 3000 --plugins atool-build?{config:'webpack.config.release.online.js'},proxy?{port:7899},hmr",
     "project": "dora -p 3001 --plugins atool-build?{config:'webpack.config.project.js'},proxy,hmr",
     "lint": "eslint --ext .js,.jsx src",
     "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name/{npm_package_version}"

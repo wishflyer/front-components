@@ -15,12 +15,12 @@ var IndexPage = React.createClass({
         <div>
         	This is the index.jsx file.
         	<a href="/main" data-tohash>goto main.jsx</a>
-            
+            1223232323
         </div>);
     }
 });
 
-ReactDOM.render(<IndexPage />, document.getElementById('react-content'));
+ReactDOM.render(<Page />, document.getElementById('react-content'));
 
 
 /*<Page/>*/

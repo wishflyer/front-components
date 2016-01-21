@@ -19,7 +19,10 @@ module.exports = function(webpackConfig) {
 
   webpackConfig.entry = {
     dd:"./src/components/release-entry.js"
-  },
+  };
+
+  webpackConfig.output.library = 'components'; 
+  webpackConfig.output.libraryTarget = 'umd2';
 
   return webpackConfig;
 };

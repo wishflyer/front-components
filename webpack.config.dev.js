@@ -17,5 +17,9 @@ module.exports = function(webpackConfig) {
     jquery: 'window.jQuery',
   };
 
+  webpackConfig.entry = {
+    components:"./src/entry/index.jsx"
+  };
+
   return webpackConfig;
 };

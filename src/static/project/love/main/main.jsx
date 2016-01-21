@@ -14,6 +14,7 @@ var MainPage = React.createClass({
            	This is the main.jsx file.
            	<Button>Test</Button>
 			<a href="/index" data-tohash>click to index.jsx</a>
+			
         </div>);
     }
 });

@@ -26,9 +26,9 @@ var Header1 = React.createClass({
 
 	render: function() {
 		return (
-			<div id="header1" className="row-flex row-flex-end" style={{"background-color":"#fbfbfb","border-bottom":"1px solid #d9d9d9","padding":"10px 0"}}>
-				<div><img src="../../src/static/image/logo.png" style={{"position":"absolute","left":"10%"}} /></div>
-				<div className="menu">
+			<div id="header1" className="row-flex row-flex-end" style={{"height":"75px","background-color":"#fbfbfb","border-bottom":"1px solid #d9d9d9","padding":"16px 0"}}>
+				<div><img src="../../src/static/image/logo.png" style={{"position":"absolute","left":"10%","top": "10px"}} /></div>
+				<div className="menu" style={{"background":"none"}}>
 					<Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{"border-bottom":"0px"}}>
 					   
 					   	<Menu.Item key="mail">
@@ -44,7 +44,7 @@ var Header1 = React.createClass({
 					      <Menu.Item key="setting:4">选项4</Menu.Item>
 					    </SubMenu>
 					    <Menu.Item key="alipay">
-					      <a href="/main" data-tohash className="ant-btn ant-btn-primary">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+					      <a href="/main" data-tohash className="ant-btn ant-btn-primary loginButton">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
 					    </Menu.Item>
 
 					</Menu>
