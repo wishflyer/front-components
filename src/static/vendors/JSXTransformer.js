@@ -15932,4 +15932,5 @@ module.exports = inlineSourceMap;
 },{"buffer":3}]},{},[1])(1)
 });
 
-//console.log("load JSXTransformer.js end");
+
+console.log("load JSXTransformer.js end");

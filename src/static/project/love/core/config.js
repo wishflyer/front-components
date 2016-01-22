@@ -3,9 +3,11 @@ console.log("loading config.js start");
 window.dd = window.dd || {}
 //配置路由信息
 window.dd.RouteConfig = {
-	"./src/static/project/love/core/base.jsx":/^\/$/ig,
-	"./src/static/project/love/index.jsx":/^\/index$/ig,
-	"./src/static/project/love/main/main.jsx":/^\/main$/ig,
+	"./src/static/project/love/core/index.jsx":/\/$/ig,
+	"./src/static/project/love/main/index.jsx":/\/index$/ig,
+	"./src/static/project/love/main/main.jsx":/\/main$/ig,
+	"./src/static/project/love/user/login.jsx":/\/login$/ig,
+	"./src/static/project/love/user/register.jsx":/\/register$/ig,
 }
 
 window.dd.debugMode = true;

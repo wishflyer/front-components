@@ -3,6 +3,8 @@ var React = require('react');
 var $ =  require('jquery');
 var antd = require("antd");
 
+require('../../static/css/components/demo/demo.css');
+
 var Tabs = antd.Tabs;
 var TabPane = Tabs.TabPane;
 
@@ -60,6 +62,7 @@ var Table = require('../table/bsgrid');
 
 //modules
 var Info1 = require('../pages/modules/info1');
+var LeftMenu = require('../modal/leftMenu');
 
 var listData = {"学历":"本科","收入":"10000","性别":"男","户口":"北京户口","是否吸烟":"否","是否喝酒":"否"}
 
@@ -115,9 +118,13 @@ var Demo = React.createClass({
 
 	render: function() {
 		return (
-			<div>
+			<div id="demo">
 
-			<Tabs defaultActiveKey="2">
+			<Tabs defaultActiveKey="0">
+				 <TabPane tab="NewForTest" key="0">
+	                <LeftMenu/>
+				</TabPane>
+
 			    <TabPane tab="ad" key="1">
 					<AdBar1 bgColor="grey"><img src='../../src/static/image/1.jpg' /></AdBar1>
 			    </TabPane>

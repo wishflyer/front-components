@@ -19,6 +19,7 @@ module.exports = function(webpackConfig) {
 
   webpackConfig.entry = {
     project:"./src/static/project/love/index.jsx"
+    //project:"./src/static/project/example/router/index.jsx"
   };
 
   return webpackConfig;

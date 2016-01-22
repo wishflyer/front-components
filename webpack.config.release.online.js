@@ -21,7 +21,7 @@ module.exports = function(webpackConfig) {
     dd:"./src/components/release-entry.js"
   };
 
-  webpackConfig.output.library = 'components'; 
+  webpackConfig.output.library = 'components'; //https://webpack.github.io/docs/library-and-externals.html
   webpackConfig.output.libraryTarget = 'umd2';
 
   return webpackConfig;

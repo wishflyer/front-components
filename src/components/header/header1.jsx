@@ -24,6 +24,12 @@ var Header1 = React.createClass({
 	    });
   	},
 
+  	getDefaultProps: function() {
+  		return {
+  			loginAction:"/login"
+  		};
+  	},
+
 	render: function() {
 		return (
 			<div id="header1" className="row-flex row-flex-end" style={{"height":"75px","background-color":"#fbfbfb","border-bottom":"1px solid #d9d9d9","padding":"16px 0"}}>
@@ -44,7 +50,7 @@ var Header1 = React.createClass({
 					      <Menu.Item key="setting:4">选项4</Menu.Item>
 					    </SubMenu>
 					    <Menu.Item key="alipay">
-					      <a href="/main" data-tohash className="ant-btn ant-btn-primary loginButton">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+					      <a href={this.props.loginAction} data-tohash className="ant-btn ant-btn-primary loginButton">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
 					    </Menu.Item>
 
 					</Menu>

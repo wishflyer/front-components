@@ -43,7 +43,7 @@ var Login = React.createClass({
 						    <Button type="primary">登录</Button>
 						  </div>
 					     <div className="ant-checkbox-inline ">
-						    <Button type="ghost">注册</Button>
+						    <a href="/register" data-tohash className="ant-btn ant-btn-ghost">注册</a>
 						  </div>
 					  </div>
 

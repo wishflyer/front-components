@@ -201,15 +201,18 @@ var Tools = {
 
     },
     goJSX: function(url){
+        console.log("in goJSX>>url:"+url)
         var RouteConfig = dd.RouteConfig;
         for(var i in RouteConfig){
             if(RouteConfig[i].test(url)){
                 console.log("in goJSX...loadJSX");
                 this.loadJSX(i);
+                return;
             }
         }
     },
     handleA: function(key){
+        console.log("handleA.......");
         var key = key||"data-tohash";
         window.$(document).off("click","a");
         window.$(document).on("click","a",function(){

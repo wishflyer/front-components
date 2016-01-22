@@ -7,19 +7,18 @@ window.ddcomponents = components;
 
 var IndexPage = React.createClass({
 
-	componentDidMount: function() {
-		console.log("window.location.hash>>>>"+window.location.hash)
-		if(window.location.hash == ""){
-			window.location.hash = "/index"
-		}
-	},
-
     render: function(){
 
-        return(<div/>);
+        return(
+        <div>
+        	This is the index.jsx file.
+        	<a href="/main" data-tohash>goto main.jsx</a>
+            
+        </div>);
     }
 });
 
 ReactDOM.render(<IndexPage />, document.getElementById('react-content'));
 
 
+/*<Page/>*/

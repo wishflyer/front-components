@@ -14,5 +14,5 @@ var MainPage = React.createClass({
     }
 });
 
-ReactDOM.render(<MainPage/>,document.getElementById("content"))
+ReactDOM.render(<MainPage/>,document.getElementById("react-content"))
 

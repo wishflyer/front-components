@@ -12,7 +12,13 @@ var Components = {
 	pages : { 
 		main: { 
 			page1:require("./pages/main/page1"),
-		} 
+		},
+		login:{
+			page1:require('./pages/login/page1'),
+		},
+		register:{
+			page1:require('./pages/register/page1')
+		}
 	},
 
 	login : {
@@ -24,6 +30,9 @@ var Components = {
 		page1 : require("./test/page1"),
 		page2 : require("./test/page2"),
 	},*/
+	util :{
+		fullBackgroundInmage : require('./util/fullBackgroundImage'),
+	},
 
 	tools : require("../utils/tools"),
 	
