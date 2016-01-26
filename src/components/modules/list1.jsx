@@ -1,6 +1,6 @@
 var React = require('react');
 
-var SuperMarquee2 = require('../../carousel/superMarquee2')
+var SuperMarquee2 = require('../carousel/superMarquee2')
 
 var _data = [{imgSrc:'src/static/image/girls/girl1.jpg',name:'测试1',description:'这是一个测试1~'}
 			,{imgSrc:'src/static/image/girls/girl1.jpg',name:'测试2',description:'这是一个测试2~'}
@@ -44,7 +44,7 @@ var List = React.createClass({
 		var content = [];
 		var data = this.props.data;
 		for (var elem in data) {
-			console.log("elem:"+elem+"  data[elem]:"+data[elem]);
+			console.log("elem:"+elem+"  data[elem]:"+data[elem]+"  data[elem].imgSrc:"+data[elem].imgSrc);
 		  	content.push(<a target="_blank" href="#"><img src={data[elem].imgSrc}></img></a>);
 		}
 

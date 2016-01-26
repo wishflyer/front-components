@@ -8,6 +8,19 @@ var Components = {
 
 	antd: require('antd'),
 
+	header:{
+		header1: require('./header/header1'),
+	},
+
+	carousel:{
+		superMarquee2: require('./carousel/superMarquee2'),
+	},
+
+	modules:{
+		info1:require('./modules/info1'),
+		info2:require('./modules/info2'),
+		list1:require('./modules/list1'),
+	},
 	//page
 	pages : { 
 		main: { 

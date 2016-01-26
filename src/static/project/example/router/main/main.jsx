@@ -3,6 +3,7 @@ var React = components.React;
 var ReactDOM = components.ReactDOM;
 
 
+
 var MainPage = React.createClass({
 
     render: function(){

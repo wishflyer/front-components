@@ -61,7 +61,10 @@ var Layer = require('../modal/layer');
 var Table = require('../table/bsgrid');
 
 //modules
-var Info1 = require('../pages/modules/info1');
+var Info1 = require('../modules/info1');
+var Info2 = require('../modules/info2');
+var List1 = require('../modules/list1');
+
 var LeftMenu = require('../modal/leftMenu');
 
 var listData = {"学历":"本科","收入":"10000","性别":"男","户口":"北京户口","是否吸烟":"否","是否喝酒":"否"}
@@ -220,6 +223,8 @@ var Demo = React.createClass({
 
 				 <TabPane tab="Modules" key="13">
 					<Info1/>
+					<Info2/>
+					<List1/>
 				</TabPane>
 
 				 <TabPane tab="Modal" key="14">

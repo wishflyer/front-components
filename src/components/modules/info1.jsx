@@ -9,17 +9,17 @@ var Icon = antd.Icon;
 var Button = antd.Button;
 var ButtonGroup = Button.Group;
 
-var SuperSlideCarousel204 = require("../../carousel/superSlideCarousel2.4");
-var List = require("../../util/list");
+var SuperSlideCarousel204 = require("../carousel/superSlideCarousel2.4");
+var List = require("../util/list");
 
-var Star = require("../../util/star");
+var Star = require("../util/star");
 
 
 var listData = {"学历":"本科","收入":"10000","性别":"男","户口":"北京户口","是否吸烟":"否","是否喝酒":"否"
 				,"学历啦":"本科","收入啦":"10000","性别啦啦":"男","户口啦":"北京户口3","是否吸烟3":"否","是否喝酒2":"否"
 				,"学历啦啦":"本科","收入啦2":"10000","性别啦啦3":"男","户口啦啦":"北京户口4","户籍啦啦":"北京户口5","是否吸烟2":"否","是否喝酒3":"否"}
 
-require('../../../static/css/components/pages/modules/info1.css');
+require('../../static/css/components/pages/modules/info1.css');
 
 var Info = React.createClass({
 

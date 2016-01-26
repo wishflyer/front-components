@@ -36,19 +36,19 @@ var SuperMarquee2 = React.createClass({
 			if(self.props.width == 0){//自适应
 				//console.log($(".superMarquee").width()+"px")
 
-				$("#marquee2").css({
-					"width":$(".superMarquee").width()+"px",
+				window.$("#marquee2").css({
+					"width":window.$(".superMarquee").width()+"px",
 					//"width":"150px",
 					"height":self.props.height * self.props.num +"px",
 				})
 
-				$("#marquee2 ul li").css({
+				window.$("#marquee2 ul li").css({
 					"height":self.props.height +"px",
 				})
 
-				$(".panel-div").css({
+				window.$(".panel-div").css({
 					"height":self.props.height +"px",
-					"width":$(".superMarquee").width()+"px",
+					"width":window.$(".superMarquee").width()+"px",
 					"overflow":"hidden"
 				})
 			
@@ -78,7 +78,7 @@ var SuperMarquee2 = React.createClass({
 		var data = this.props.data;
 		for (var elem in data) {
 			console.log("elem:"+elem+"  data[elem]:"+data[elem].imgSrc);
-		  	content.push(<li><div className="panel-div"><div className="panel-content">{data[elem].description}</div></div></li>);
+		  	content.push(<li><div className="panel-div"><div className="panel-content"><a target="_blank" href="#"><img src={data[elem].imgSrc}></img></a>{data[elem].description}</div></div></li>);
 		}
 
 
