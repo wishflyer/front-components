@@ -1,4 +1,4 @@
-require("../static/vendors/antd/antd.css");
+import '../common/lib';
 
 var React = require('react');
 var ReactDOM = require('react-dom');

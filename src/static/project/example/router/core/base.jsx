@@ -9,6 +9,8 @@ var Base = React.createClass({
 	render: function(){
 
 		return(<div>
+			This is the Base page<br/>
+			<a href="#/index" data-tohash>click to index page</a>
 		</div>)
 	}
 });

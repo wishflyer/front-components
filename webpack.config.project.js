@@ -18,9 +18,13 @@ module.exports = function(webpackConfig) {
   };
 
   webpackConfig.entry = {
-    project:"./src/static/project/love/index.jsx"
+    //project:"./src/static/project/love/index.jsx"
     //project:"./src/static/project/example/router/index.jsx"
+    project:"./src/components/release-entry.js"
   };
+
+  webpackConfig.output.library = 'components'; //https://webpack.github.io/docs/library-and-externals.html
+  webpackConfig.output.libraryTarget = 'umd2';
 
   return webpackConfig;
 };

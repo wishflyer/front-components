@@ -1,5 +1,5 @@
 
-require("../static/vendors/antd/antd.css");
+import '../common/lib';
 
 var Components = {
 
