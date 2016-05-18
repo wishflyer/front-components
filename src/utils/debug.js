@@ -1,4 +1,3 @@
-var React=require("react/addons");
 
 var Debug = {
 	showLog:true,

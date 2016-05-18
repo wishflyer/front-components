@@ -1,4 +1,6 @@
-var React = require('react/addons');
+
+var React = require('react');
+var addons = require('react-addons');
 var ZRender = require('../../../../static/vendors/zrender/index');
 var Tools = require('../../../../utils/tools');
 

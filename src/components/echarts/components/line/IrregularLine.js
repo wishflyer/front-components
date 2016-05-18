@@ -4,8 +4,8 @@
  * @author czdujianbin 2015-09-23 14:01:41
  */
 
-
-var React = require('react/addons');
+var React = require('react');
+var addons = require('react-addons');
 var ZRender = require('../../../../static/vendors/zrender/index');
 var Options = require('../../options/options');
 var AbstractECharts = require("../AbstractECharts");

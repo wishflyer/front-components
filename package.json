@@ -9,8 +9,9 @@
     "atool-build": "0.7.x",
     "babel-plugin-antd": "^0.4.0",
     "es3ify-loader": "^0.2.0",
-    "react": "~0.14.7",
-    "react-dom": "~0.14.7"
+    "react": "~0.14.8",
+    "react-addons": "~0.9.x",
+    "react-dom": "~0.14.8"
   },
   "devDependencies": {
     "dora": "0.2.x",

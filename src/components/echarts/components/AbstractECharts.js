@@ -3,8 +3,8 @@
  * @module ECharts
  * @author czdujianbin 2015-09-22
  */
-
-var React = require('react/addons');
+var React = require('react');
+var addons = require('react-addons');
 var Tools = require('../../../utils/tools');
 
 /**
