@@ -126,6 +126,10 @@ var Demo = React.createClass({
 			<Tabs defaultActiveKey="0">
 				 <TabPane tab="NewForTest" key="0">
 	                <LeftMenu/>
+
+	                <div className="col-4">
+			    		<SuperMarquee2 num="6" height="120"/>
+			    	</div>
 				</TabPane>
 
 			    <TabPane tab="ad" key="1">

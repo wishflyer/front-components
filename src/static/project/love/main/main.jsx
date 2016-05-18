@@ -43,7 +43,7 @@ var MainPage = React.createClass({
 
              		<Col span="8">
                     <div style={{"width":"400px"}}>
-                      <SuperMarquee2 num="6" />
+                      <SuperMarquee2 num="6" height="120"/>
                     </div>
              		</Col>
              	</Row>

@@ -13,11 +13,32 @@
 	padding:8px 10px;
 }
 
-
+/* 圆角
 #marquee2 .panel-content img{
 	width:80px;
     height:80px;
     -webkit-border-radius: 50em;
     -moz-border-radius: 50em;
     border-radius: 50em;
-}
+} 
+ */
+
+
+#marquee2 .panel-content .image{
+	float:left;
+} 
+
+#marquee2 .panel-content img{
+	width:90px;
+    height:100px;
+} 
+
+#marquee2 .panel-content .description{
+	float:left;
+	padding-left: 10px;
+} 
+
+#marquee2 .panel-content .title{
+	width:90px;
+	margin-bottom: 20px;
+} 
