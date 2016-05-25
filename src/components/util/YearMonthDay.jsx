@@ -1,5 +1,5 @@
 var React = require('react');
-var $ = require('jquery');
+var $ = window.jQuery;
 
 
 var antd = require("antd");

@@ -1,6 +1,6 @@
 var React = require('react');
 
-var $ = require('jquery');
+var $ = window.jQuery;
 var Tools = require("../../utils/tools");
 
 var FullBackgroundImage = require("../util/fullBackgroundImage");

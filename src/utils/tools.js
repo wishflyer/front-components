@@ -1,4 +1,4 @@
-var $ = require('jquery');
+var $ = window.jQuery;
 var Debug = require('./debug.js')
 
 var Tools = {

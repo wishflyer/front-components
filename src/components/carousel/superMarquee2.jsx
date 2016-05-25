@@ -178,7 +178,7 @@ var content = [];
 
 var React = require('react');
 var Tools = require('../../utils/tools');
-var $ = require('jquery')
+var $ = window.jQuery
 
 require('../../static/css/components/carousel/superMarquee2.css');
 

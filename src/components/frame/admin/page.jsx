@@ -2,6 +2,8 @@ import React from 'react';
 import Sidebar from './sidebar.jsx';
 import Topbar from './topbar.jsx';
 
+require('../../../static/css/components/frame/admin/admin.css');
+
 const Page = React.createClass({
 	render() {
 		return(

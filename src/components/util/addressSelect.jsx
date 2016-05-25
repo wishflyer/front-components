@@ -1,7 +1,7 @@
 var React = require("react");
 var ReactDOM = require('react-dom');
 
-var $ = require('jquery');
+var $ = window.jQuery;
 var Tools = require('../../utils/tools');
 
 var antd = require('antd');
