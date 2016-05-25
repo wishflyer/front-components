@@ -1,6 +1,6 @@
 {
-    "name": "Mimiron",
-    "description": "Mimiron API",
+    "name": "front-component",
+    "description": "front-component API",
     "version": "0.1.0",
     "options": {
         "outdir": "./apidocs",

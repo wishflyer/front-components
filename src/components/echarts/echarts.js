@@ -5,7 +5,8 @@
  */
 
 
-var React = require('react/addons');
+var React = require('react');
+var addons = require('react-addons');
 var Tools = require('../../utils/tools');
 
 var AbstractECharts = require('./components/AbstractECharts');

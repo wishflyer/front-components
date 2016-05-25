@@ -1,6 +1,6 @@
 var React = require('react');
 var Tools = require('../../utils/tools');
-var $ = require('jquery')
+var $ = window.jQuery;
 
 require('../../static/css/components/carousel/superSlideCarousel2.26.css');
 

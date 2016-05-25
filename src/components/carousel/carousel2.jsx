@@ -1,6 +1,6 @@
 var React = require('react');
 
-var $ = require('jquery');
+var $ = window.jQuery;
 require('../../static/css/components/carousel/carousel2.css');
 
 var Carousal = React.createClass({

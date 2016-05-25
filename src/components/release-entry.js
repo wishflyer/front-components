@@ -48,6 +48,11 @@ var Components = {
 	},
 
 	tools : require("../utils/tools"),
+	ajax  : require("../utils/ajax"),
+
+	frame:{
+		page:require('./frame/admin/page'),
+	},
 	
 	echarts : {
 		ECharts : require("./echarts/echarts"),
@@ -72,7 +77,6 @@ var Components = {
 
 	
 };
-
 /*components.version = require('../../package.json').version;*/
 
 //重新配置getter, 防止拿到undefined时React报奇怪的错误.(Uncaught TypeError: Cannot read property 'toUpperCase' of undefined @ReactDefaultInjection.js line53

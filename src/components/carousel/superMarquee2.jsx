@@ -1,6 +1,6 @@
 var React = require('react');
 var Tools = require('../../utils/tools');
-var $ = require('jquery')
+var $ = window.jQuery;
 var Debug = require('../../utils/debug')
 
 require('../../static/css/components/carousel/superMarquee2.css');

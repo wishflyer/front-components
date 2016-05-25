@@ -13,7 +13,7 @@ var Carousel1 = React.createClass({
 
 	getDefaultProps: function() {
 		return {
-			height:"100%",
+			height:"200px",
 			width:"100%",
 			//数组对象[{img:"../../src/static/image/bigbar1.jpg",url:"http://www.baidu.com"}]
 			images:[{src:"../../src/static/image/bigbar4.jpg",url:"http://www.baidu.com"},{src:"../../src/static/image/bigbar2.jpg",url:"http://www.google.com"}]
