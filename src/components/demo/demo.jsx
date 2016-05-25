@@ -137,12 +137,12 @@ var Demo = React.createClass({
 			    </TabPane>
 			    <TabPane tab="carousel" key="2">
 			    	<div className="col-24">
+				    	<Carousel1/>
 				    	<Carousel2/>
 				    	<SuperSlideCarousel219/>
 				    	<SuperSlideCarousel215/>
 				    	<SuperSlideCarousel226/>
 				    	<SuperSlideCarousel204/>
-				    	<Carousel1/>
 				    </div>
 			    </TabPane>
 			    <TabPane tab="ECharts" key="3">
