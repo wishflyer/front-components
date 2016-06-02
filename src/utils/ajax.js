@@ -11,7 +11,7 @@ let Ajax = {
 			dataType: 'json',
 			success: data => {
 				// 取消css效果
-				--mimironUse.ajaxLoadingStack==0?$("#ajax-loading")? $("#ajax-loading").removeClass("la-animate"): null:null;
+				--dd.ajaxLoadingStack==0?$("#ajax-loading")? $("#ajax-loading").removeClass("la-animate"): null:null;
 				if(data["info"] && data["autoWrap"])
 					data = data.autoWrap;
 				func(data);
@@ -30,7 +30,7 @@ let Ajax = {
         	dataType: 'json',
         	success: data => {
         		// 取消css效果
-				--mimironUse.ajaxLoadingStack==0?$("#ajax-loading")? $("#ajax-loading").removeClass("la-animate"): null:null;
+				--dd.ajaxLoadingStack==0?$("#ajax-loading")? $("#ajax-loading").removeClass("la-animate"): null:null;
 				if(data["info"] && data["autoWrap"])
 					data = data.autoWrap;
 				func(data);
@@ -40,13 +40,13 @@ let Ajax = {
 		})
 	},
 	showLoading : function(){
-		mimironUse.ajaxLoadingStack = mimironUse.ajaxLoadingStack || 0;
-		mimironUse.ajaxLoadingStack++;
+		dd.ajaxLoadingStack = dd.ajaxLoadingStack || 0;
+		dd.ajaxLoadingStack++;
 		$("#ajax-loading")? $("#ajax-loading").addClass("la-animate"): null;
 	},
 	onError: function(obj, msg, e) {
 		// 取消css效果
-		--mimironUse.ajaxLoadingStack==0?$("#ajax-loading")? $("#ajax-loading").removeClass("la-animate"): null:null;
+		--dd.ajaxLoadingStack==0?$("#ajax-loading")? $("#ajax-loading").removeClass("la-animate"): null:null;
 	},
 }
 

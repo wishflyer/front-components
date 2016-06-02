@@ -49,10 +49,14 @@ var Components = {
 
 	tools : require("../utils/tools"),
 	ajax  : require("../utils/ajax"),
+	debug : require("../utils/debug"),
 
 	frame:{
 		page:require('./frame/admin/page'),
 	},
+	
+	command : require("./query/command"),
+	query : require("./query/query"),
 	
 	echarts : {
 		ECharts : require("./echarts/echarts"),
@@ -73,6 +77,9 @@ var Components = {
 
 		//wordCloud
 		WordCloud : require("./echarts/components/wordCloud/WordCloud")
+	},
+	table : {
+		myTable:require("./query/query"),
 	}
 
 	

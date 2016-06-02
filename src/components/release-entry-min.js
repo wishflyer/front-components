@@ -10,9 +10,16 @@ var Components = {
 
 	tools : require("../utils/tools"),
 	ajax  : require("../utils/ajax"),
+	debug : require("../utils/debug"),
 
 	frame:{
 		page:require('./frame/admin/page'),
+	},
+
+	command : require("./query/command"),
+	query : require("./query/query"),
+	table : {
+		myTable:require("./table/table.jsx"),
 	}
 	
 };

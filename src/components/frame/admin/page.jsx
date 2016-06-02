@@ -12,7 +12,7 @@ const Page = React.createClass({
 			<div id="wrapper">
 				<div id="ajax-loading" className="la-anim-10"></div>
 				<Sidebar list={this.props.sidebarList}/>
-				<div id="current-page" style={{"float":"left","width":"85%"}}>
+				<div id="current-page" style={{"float":"left","width":"80%"}}>
 					{this.props.children}
 				</div>
 			</div>

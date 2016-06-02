@@ -168,9 +168,46 @@ var Tools = {
         return false; 
     },
 
+    loadUrl: function(url){ //根据url进行加载资源
+        window.location.hash = url;
+        console.log("loadUrl:"+url);
+        if(url[0] == "#"){ //某些版本的IE window.location.hash返回#
+            url = url.substring(1, url.length);
+        }
+        if(!window.dd.RouteConfig){
+            console.info(`请先定义window.dd.RouteConfig`);
+            return
+        }
+        let RouteConfig = window.dd.RouteConfig;
+        for(let i in RouteConfig){
+            if(RouteConfig[i].test(url)){
+                if(i.indexOf("|") != -1){
+                    for(let j of i.split("|")){
+                        this.loadJSX(j);
+                    }                  
+                } else {
+                    this.loadJSX(i);
+                }
+                //运行jsx
+                return 
+            }
+        }
+        for(let i in RouteConfig){ //如果不重复一次, 有时候会找不到, 原因尚不明确.
+            if(RouteConfig[i].test(url)){
+                if(i.indexOf("|")){
+                    for(let j of i.split("|"))
+                        this.loadJSX(j);
+                } else {
+                    this.loadJSX(i);
+                }
+                return 
+            }
+        }
+        alert(`无权限访问 ${url} .`);
+        console.info(`url ${url} 没有注册.`);
+    },
 
     loadJSX: function(url){
-        console.log(url);
         if(!window.dd.runScripts){
             console.info("如果你想使用utils.loadJSX异步加载jsx文件, 你必须先通过JSXTransform.js暴露window.dd.runScripts方法!");
             return;
@@ -192,12 +229,18 @@ var Tools = {
             document.head.removeChild(scripts[0]);
         }*/
 
+        // 这里需要约束所有jsx页面全部渲染到DOM id= page-wrapper 
+        $("#page-wrapper").html('<div class="la-anim-10 la-animate"></div>'); //加载动画效果
+
         var script = document.createElement("script");
         script.type = "text/babel";
         script.src = url+"?only";
 
         //console.log("add scrpit标签:"+script.src)
         document.body.appendChild(script);
+        window.dd.runScripts();
+        //运行之后即可直接删除jsx标签, 否则加载base.jsx之后加载其他jsx文件会导致重复加载
+        document.body.removeChild(script);
 
     },
     goJSX: function(url){

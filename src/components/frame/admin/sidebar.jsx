@@ -5,7 +5,7 @@ var Menu = antd.Menu;
 var Icon = antd.Icon;
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
-//import Loader from "../../tools/loader"
+import Tools from "../../../utils/tools"
 
 const Sidebar = React.createClass({
   getDefaultProps(){
@@ -24,7 +24,7 @@ const Sidebar = React.createClass({
     this.setState({
       current: e.key
     });
-    //Loader.loadUrl(e.key);
+    Tools.loadUrl(e.key);
   },
   render() {
     let dummyKey=0;

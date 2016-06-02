@@ -7,6 +7,10 @@ require('../../static/css/components/demo/demo.css');
 
 var Tabs = antd.Tabs;
 var TabPane = Tabs.TabPane;
+var Input  = antd.Input;
+var Button = antd.Button;
+var Col = antd.Col;
+var Row = antd.Row;
 
 var AdBar1 = require('../ad/adBar1');
 
@@ -116,10 +120,48 @@ var tableConfig = {
         }
     }
 
+//query
+var Query = require('../query/query');
+var Command = require('../query/command');
+
+var Table = require('../table/table');
 
 var Demo = React.createClass({
 
+	getInitialState:function(){
+
+        return {
+            table:{
+                pageSize:10,
+                pageNo:1,
+                totalRows:0,
+                data: [],
+            },
+        };
+
+    },
+
 	render: function() {
+
+
+	var dataTable = this.state.table.data;
+        for(let i=0;i<dataTable.length;i++){
+            dataTable[i]['control']= <div><a  onClick={this.onGetProductMappingAction.bind(this,dataTable[i])}>同步</a>   |   <a onClick={this.showModifyModal.bind(this,dataTable[i])}>编辑</a>   |   <a onClick={this.onDeleteProductMappingAction.bind(this,dataTable[i].id)}>删除</a></div>;
+        }
+
+        let tableProps={
+          title:['产品映射ID','云公司产品编码','华为产品编码','云资源规格编码','资源池编码','资源类型','状态','创建时间','修改时间','操作'],
+          jsonKey:['id','ctProductCode','hwProductCode','speCode','zoneCode','resourceType','status','createDate','updateDate','control'],
+          data:dataTable,
+          doList:this.doList,
+          pageSize:this.state.table.pageSize,
+          pageNo:this.state.table.pageNo, //page:this.state.offset
+          totalRows:this.state.table.totalRows,
+          checkType:"none",
+        };
+
+        console.log(tableProps);
+
 		return (
 			<div id="demo">
 
@@ -130,6 +172,25 @@ var Demo = React.createClass({
 	                <div className="col-4">
 			    		<SuperMarquee2 num="6" height="120"/>
 			    	</div>
+
+	                <Col span={16} offset={4}>
+			            <Command>
+			                <Button type="primary" onClick={null} >添加产品关系</Button>&nbsp;
+			                <Button type="primary" onClick={null} >产品映射关系</Button>
+			            </Command>
+
+				    	<Query>
+				    		<Input labelName="上传文件ID:" name="fileId" placeholder="上传文件ID" />
+							<Input labelName="文件名称:" name="fileName" placeholder="文件名称" />
+							<Input labelName="文件名称:" name="fileName" placeholder="文件名称" />
+							<Input labelName="文件名称:" name="fileName" placeholder="文件名称" />
+							<Input labelName="文件名称:" name="fileName" placeholder="文件名称" />
+						</Query>
+					</Col>
+					<Col span={16} offset={4}>
+						<Table {...tableProps} />
+					</Col>
+
 				</TabPane>
 
 			    <TabPane tab="ad" key="1">
