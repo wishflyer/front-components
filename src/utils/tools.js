@@ -183,7 +183,9 @@ var Tools = {
             if(RouteConfig[i].test(url)){
                 if(i.indexOf("|") != -1){
                     for(let j of i.split("|")){
-                        this.loadJSX(j);
+                        if(j){
+                            this.loadJSX(j);
+                        }
                     }                  
                 } else {
                     this.loadJSX(i);

@@ -5,6 +5,7 @@ import Topbar from './topbar.jsx';
 require('../../../static/css/components/frame/admin/admin.css');
 
 const Page = React.createClass({
+
 	render() {
 		return(
 		<div>

@@ -26,6 +26,11 @@ const Sidebar = React.createClass({
     });
     Tools.loadUrl(e.key);
   },
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      list: nextProps.list
+    });
+  },
   render() {
     let dummyKey=0;
     let createNode = node => {
